@@ -1,0 +1,91 @@
+\documentclass[varwidth=\maxdimen]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsmath,amssymb}
+\usepackage{palatino}
+\usepackage{mathpazo}%  Matching math fonts (see http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html [now broken])
+\usepackage{helvet}%      Choose default sans serif
+\usepackage{titlesec}%     Change style of headings (should precede section redefinitions below: Set sans serif for all headings)
+
+\usepackage{../../sty/hepparticles}
+\usepackage{../../sty/heppennames2}
+
+\newcommand{\Pgp}{\ensuremath{\pi}}
+\newcommand{\pt}{\ensuremath{p_T}}
+\newcommand{\Irelm}{\ensuremath{I_{\text{rel}}^{\Pgm}}}
+\newcommand{\Itrk}{\ensuremath{I^{\text{trk}}(M)}}
+\newcommand{\Ineu}{\ensuremath{I^{\text{neu}}(M)}}
+\newcommand{\ItrkK}{\ensuremath{I^{\text{trk}}(\mathrm{trk}_1)}}
+\newcommand{\mllhad}{\ensuremath{m_{\mathrm{M}\gamma}}}
+\newcommand{\PGrz}{\ensuremath{\PGr^0}}
+\newcommand{\PKstarz}{\ensuremath{\PKst^{0}}}
+\newcommand{\Hgrho}{\PH\to\PGrz\gamma}
+\newcommand{\Hgphi}{\PH\to\PGf\gamma}
+\newcommand{\Hgkstar}{\PH\to\PKstarz\gamma}
+\newcommand{\gphi}{\PGf\gamma}
+\newcommand{\grho}{\PGrz\gamma}
+\newcommand{\gkstar}{\PKstarz\gamma}
+\newcommand{\ztoll}{\PZ\to\ell\ell}
+\newcommand{\ggH}{\Pg\Pg\PH}
+\newcommand{\WH}{\PW\PH}
+\newcommand{\ZH}{\PZ\PH}
+\newcommand{\zz}{\PZ\PZ^{*}}
+\newcommand{\Hzz}{\PH\to\zz}
+\newcommand{\ppc}{\Pp\Pp}
+\newcommand{\mpipi}{\ensuremath{m_{\Pgp\Pgp}}}
+\newcommand{\pippim}{\Pgpp\Pgpm}
+\newcommand{\kpkm}{\PKp\PKm}
+\newcommand{\mkk}{\ensuremath{m_{\PK\PK}}}
+\newcommand{\mkpi}{\ensuremath{m_{\PK\Pgp}}}
+\newcommand{\ea}{\epsilon\mathcal{A}}
+\newcommand{\dbias}{\Delta_{\text{bias}}}
+\newcommand{\mumupm}{\Pgmp\Pgmm}
+\newcommand{\pgjpsi}{\PGg\PJGy}
+\newcommand{\pgy}{\ensuremath{\PGg\PGy}(2S)\xspace}
+\newcommand{\pgu}{\ensuremath{\PGg\PGU}(nS)\xspace}
+\newcommand{\pgr}{\ensuremath{\PGg\PGrz}\xspace}
+\newcommand{\pgf}{\ensuremath{\PGg\PGf}\xspace}
+\newlength\cmsTabSkip\setlength{\cmsTabSkip}{1ex}
+\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}
+\renewcommand{\labelenumi}{\theenumi}
+
+\begin{document}
+\begin{table}[h!]
+	\begin{center}
+		\footnotesize
+		\begin{tabular}{lcccc}
+			\hline\hline
+			\multicolumn{5}{c}{Common selections} \\
+			\hline\hline
+			& \multicolumn{4}{c}{2 ``high-purity'' tracks, opposite sign} \\
+			M selection & \multicolumn{4}{c}{$|\eta^{\mathrm{trk}}|<2.5$, $\pt^{\mathrm{trk}1}> 20$ GeV, $\pt^{\mathrm{trk}2}> 5$ GeV, $|\eta^{\mathrm{M}}|<2.1$} \\
+			& \multicolumn{4}{c}{$0.62<\mpipi<0.92$ GeV (\PGrz) / $1.008<\mkk<1.032$ GeV (\PGf) / $0.84<\mkpi<0.94$ GeV (\PKstarz) } \\
+			\hline\hline
+			Category & ggH & VBF high-$\pt^\gamma$ & VBF low-$\pt^\gamma$ & VH \\
+			\hline\hline
+			Trigger & Photon $+$ & high-$\pt$ photon $+$ &  Photon $+$ & Double or single \\
+			& jet with $\tau$-ID & VBF-like jets & jet with $\tau$-ID &  lepton \\
+			\hline
+			$\pt^\gamma$ [GeV] & $>38$ & $>75$ & $>40$ and $<75$ & $>40$ \\
+			$|\eta^\gamma|$ & $<2.5$ & $<1.4$ & $<2.1$ & $<2.5$ \\
+			$\gamma$-ID signal eff. & 80\% & 90\% & 80/90\% & 90\% \\
+			\hline
+			$\pt^\mathrm{M}$ [GeV] & $>38$ & $>30$ & $>38$ & $>38$ \\
+			$\Itrk$ & $>0.9$ & $>0.9$ & $>0.9$ & $>0.8$ \\
+			$\Ineu$ & $>0.8$ & - & - & - \\
+			\hline
+			Event & Meson candidate & 2 jets with & 2 jets with & 1 selected and \\
+			tagging & within a jet with & $\pt^\mathrm{j} > 40$ GeV & $\pt^\mathrm{j} > 30/20$ GeV &  isolated $\Pe$/${\mu}$ \\ 
+			& $\pt^\mathrm{j} > 40$ GeV, tracks & $m_\mathrm{jj} > 400$ GeV & $m_\mathrm{jj} > 300$ GeV & or 2 selected $\Pe$/${\mu}$ \\
+			& with $\Delta R < 0.07$ & $|\Delta\eta_\mathrm{jj}| > 3$ & $|\Delta\eta_\mathrm{jj}| > 3$ & compatible with \PZ\ mass \\
+			\hline
+			& \multicolumn{4}{c}{BDT categories} \\
+			\hline
+			cat0 & BDT$> 0.55$ & BDT$> 0.7$ & BDT$> 0.7$ & - \\ 
+			cat1 & $-0.4 <$BDT$< 0.55$ & $-0.6 <$BDT$< 0.7$ & $-0.6 <$BDT$< 0.7$ & - \\ 
+			\hline 
+		\end{tabular}
+	\end{center}
+\end{table}
+\end{document}

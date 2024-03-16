@@ -1,0 +1,12 @@
+\documentclass[tikz]{standalone}
+\usepackage{palatino}
+\begin{document}
+	\begin{tikzpicture}[font=\Large]
+		\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=\textwidth]{../23-005-v07-figs/fig3-middle-right.pdf}};
+		\begin{scope}[x={(image.south east)},y={(image.north west)}]
+			\draw[red,ultra thick] (-0.004,-0.008) rectangle (0.997,0.997);
+			\draw[red,ultra thick] (-0.004,-0.008) rectangle (0.32,0.056);
+			\draw (0,-0.01) node[anchor=south west] {\textcolor{red}{\textbf{PAPER (Fig. 3)}}};
+		\end{scope}
+	\end{tikzpicture}
+\end{document}
