@@ -1,0 +1,71 @@
+\documentclass[varwidth=\maxdimen]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsmath,amssymb}
+\usepackage{palatino}
+\usepackage{mathpazo}%  Matching math fonts (see http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html [now broken])
+\usepackage{helvet}%      Choose default sans serif
+\usepackage{titlesec}%     Change style of headings (should precede section redefinitions below: Set sans serif for all headings)
+
+\usepackage{../../sty/hepparticles}
+\usepackage{../../sty/heppennames2}
+
+\newcommand{\Pgp}{\ensuremath{\pi}}
+\newcommand{\pt}{\ensuremath{p_T}}
+\newcommand{\Irelm}{\ensuremath{I_{\text{rel}}^{\Pgm}}}
+\newcommand{\Itrk}{\ensuremath{I^{\text{trk}}(M)}}
+\newcommand{\Ineu}{\ensuremath{I^{\text{neu}}(M)}}
+\newcommand{\ItrkK}{\ensuremath{I^{\text{trk}}(\mathrm{trk}_1)}}
+\newcommand{\mllhad}{\ensuremath{m_{\mathrm{M}\gamma}}}
+\newcommand{\PGrz}{\ensuremath{\PGr^0}}
+\newcommand{\PKstarz}{\ensuremath{\PKst^{0}}}
+\newcommand{\Hgrho}{\PH\to\PGrz\gamma}
+\newcommand{\Hgphi}{\PH\to\PGf\gamma}
+\newcommand{\Hgkstar}{\PH\to\PKstarz\gamma}
+\newcommand{\gphi}{\PGf\gamma}
+\newcommand{\grho}{\PGrz\gamma}
+\newcommand{\gkstar}{\PKstarz\gamma}
+\newcommand{\ztoll}{\PZ\to\ell\ell}
+\newcommand{\ggH}{\Pg\Pg\PH}
+\newcommand{\WH}{\PW\PH}
+\newcommand{\ZH}{\PZ\PH}
+\newcommand{\zz}{\PZ\PZ^{*}}
+\newcommand{\Hzz}{\PH\to\zz}
+\newcommand{\ppc}{\Pp\Pp}
+\newcommand{\mpipi}{\ensuremath{m_{\Pgp\Pgp}}}
+\newcommand{\pippim}{\Pgpp\Pgpm}
+\newcommand{\kpkm}{\PKp\PKm}
+\newcommand{\mkk}{\ensuremath{m_{\PK\PK}}}
+\newcommand{\mkpi}{\ensuremath{m_{\PK\Pgp}}}
+\newcommand{\ea}{\epsilon\mathcal{A}}
+\newcommand{\dbias}{\Delta_{\text{bias}}}
+\newcommand{\mumupm}{\Pgmp\Pgmm}
+\newcommand{\pgjpsi}{\PGg\PJGy}
+\newcommand{\pgy}{\ensuremath{\PGg\PGy}(2S)\xspace}
+\newcommand{\pgu}{\ensuremath{\PGg\PGU}(nS)\xspace}
+\newcommand{\pgr}{\ensuremath{\PGg\PGrz}\xspace}
+\newcommand{\pgf}{\ensuremath{\PGg\PGf}\xspace}
+\newlength\cmsTabSkip\setlength{\cmsTabSkip}{1ex}
+\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}
+\renewcommand{\labelenumi}{\theenumi}
+
+\begin{document}
+\begin{table}[H]
+	\footnotesize
+	\begin{center}
+		\begin{tabular}{lrrrrrr}
+			\hline
+			& \multicolumn{2}{c}{U.L. $\mathcal{B}(\Hgrho)$}  & \multicolumn{2}{c}{U.L. $\mathcal{B}(\Hgphi)$} &  \multicolumn{2}{c}{U.L. $\mathcal{B}(\Hgkstar)$}\\ [2ex]
+			category & Exp.$(10^{-4})$ & Obs.$(10^{-4})$ & Exp.$(10^{-4})$ & Obs.$(10^{-4})$ & Exp.$(10^{-4})$ & Obs.$(10^{-4})$\\
+			\hline
+			VH & $62.3^{+25.6}_{-17.9}$ & 73.7 & $37.3^{+16.9}_{-11.3}$ & 45.0 & $25.3^{+11.4}_{-7.3}$ & 48.5 \\[2ex]
+			low-$\pt^\gamma$ VBF & $49.6^{+22.5}_{-15.0}$ & 35.6 & $33.1^{+18.7}_{-11.5}$ & 27.9 & $18.8^{+8.90}_{-5.7}$  & 12.3\\[2ex]
+			high-$\pt^\gamma$ VBF & $22.9^{+10.5}_{-6.9}$ & 16.0 & $16.0^{+9.0}_{-5.5}$ & 10.7 & $9.13^{+4.25}_{-2.75}$ & 6.66 \\[2ex]
+			ggH &$6.01^{+2.53}_{-1.72}$ & 4.37 & $3.08^{+1.33}_{-0.98}$ & 3.46 & $2.20^{+0.94}_{-0.62}$ & 1.93\\[2ex]
+			combined & $5.71^{+2.37}_{-1.63}$ & 3.74 &$2.88^{+1.33}_{-0.83}$ & 2.97 & $2.10^{+0.90}_{-0.58}$ &1.71 \\[2ex]
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\end{document}
