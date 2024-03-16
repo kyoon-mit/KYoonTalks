@@ -17,6 +17,54 @@
 %\usepackage[style=ieee,maxbibnames=10,sorting=none,backend=biber]{biblatex}
 %\addbibresource{./refs.bib}
 
+\usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage{helvet}
+\usepackage{titlesec}
+
+
+\usepackage{sty/hepparticles}
+\usepackage{sty/heppennames2}
+
+\newcommand{\Pgp}{\ensuremath{\pi}}
+\newcommand{\PM}{\ensuremath{\mathrm{M}}}
+\newcommand{\pt}{\ensuremath{p_T}}
+\newcommand{\Irelm}{\ensuremath{I_{\text{rel}}^{\Pgm}}}
+\newcommand{\Itrk}{\ensuremath{I^{\text{trk}}(M)}}
+\newcommand{\Ineu}{\ensuremath{I^{\text{neu}}(M)}}
+\newcommand{\ItrkK}{\ensuremath{I^{\text{trk}}(\mathrm{trk}_1)}}
+\newcommand{\mllhad}{\ensuremath{m_{\mathrm{M}\gamma}}}
+\newcommand{\PGrz}{\ensuremath{\PGr^0}}
+\newcommand{\PKstarz}{\ensuremath{\PKst^{0}}}
+\newcommand{\Hgrho}{\PH\to\PGrz\gamma}
+\newcommand{\Hgphi}{\PH\to\PGf\gamma}
+\newcommand{\Hgkstar}{\PH\to\PKstarz\gamma}
+\newcommand{\gphi}{\PGf\gamma}
+\newcommand{\grho}{\PGrz\gamma}
+\newcommand{\gkstar}{\PKstarz\gamma}
+\newcommand{\ztoll}{\PZ\to\ell\ell}
+\newcommand{\htomg}{\PH\to\PM\PGg}
+\newcommand{\ggH}{\Pg\Pg\PH}
+\newcommand{\WH}{\PW\PH}
+\newcommand{\ZH}{\PZ\PH}
+\newcommand{\zz}{\PZ\PZ^{*}}
+\newcommand{\Hzz}{\PH\to\zz}
+\newcommand{\ppc}{\Pp\Pp}
+\newcommand{\mpipi}{\ensuremath{m_{\Pgp\Pgp}}}
+\newcommand{\pippim}{\Pgpp\Pgpm}
+\newcommand{\kpkm}{\PKp\PKm}
+\newcommand{\mkk}{\ensuremath{m_{\PK\PK}}}
+\newcommand{\mkpi}{\ensuremath{m_{\PK\Pgp}}}
+\newcommand{\ea}{\epsilon\mathcal{A}}
+\newcommand{\dbias}{\Delta_{\text{bias}}}
+\newcommand{\mumupm}{\Pgmp\Pgmm}
+\newcommand{\pgjpsi}{\PGg\PJGy}
+\newcommand{\pgy}{\ensuremath{\PGg\PGy}(2S)\xspace}
+\newcommand{\pgu}{\ensuremath{\PGg\PGU}(nS)\xspace}
+\newcommand{\pgr}{\ensuremath{\PGg\PGrz}\xspace}
+\newcommand{\pgf}{\ensuremath{\PGg\PGf}\xspace}
+\newlength\cmsTabSkip\setlength{\cmsTabSkip}{1ex}
+\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}
 \captionsetup{labelformat=simple}
 \hypersetup{
 	colorlinks=true,
@@ -25,8 +73,11 @@
 	urlcolor=blue
 }
 
+\newcommand{\krhl}[1]{\textbf{\LARGE\color{red}#1}}
+\newcommand{\kbhl}[1]{\textbf{\LARGE\color{BlueViolet}#1}}
 \newcommand{\khl}[1]{\textbf{\color{structure}#1}}
 \newcommand{\ktodo}[1]{\colorbox{yellow!30}{{\color{red}\textsuperscript{\tiny FIX! }}#1}}
+\newcommand{\kmfig}[2]{\includegraphics[#2]{figures/23-005-v07-marked-figs/#1.pdf}}
 
 %%%
 \usetheme{CambridgeUS}
@@ -38,13 +89,31 @@
 \setbeamercolor{frametitle}{fg=black}
 \setbeamerfont{caption}{size=\tiny}
 \setbeamertemplate{enumerate items}[default]
+\setbeamercolor{insertsectionhead}{fg=black}
+\setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{footline}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.22\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.48\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+			\usebeamerfont{date in head/foot}\hspace*{1em}\insertshortdate\hspace*{3em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+		\end{beamercolorbox}}%
+	\vskip0pt%
+}
 \AtBeginSection[]{
 	\begin{frame}
 		\vfill
 		\centering
-		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-			\usebeamerfont{title}\thesection.  \insertsectionhead\par%
+		\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+			\usebeamerfont{title}\thesection. \insertsectionhead\par%
 		\end{beamercolorbox}
 		\vfill
 	\end{frame}
@@ -55,11 +124,13 @@
 \renewcommand{\arraystretch}{1.5}
 %%%
 
-\title{Approval Talk [HIG-23-005]\\``Search for rare decays of the Higgs boson into a photon and a \(\rho^0\), \(\phi\) or \(K^{*0}\) meson"}
+\title[Approval Talk HIG-23-005]{{\color{Periwinkle}Approval Talk [HIG-23-005]}\\{\huge``Search for rare decays of the Higgs boson into a photon\\and a \(\rho^0\), \(\phi\) or \(K^{*0}\) meson"}}
 \author[K. Yoon]{R. Covarelli\textsuperscript{1} \and M. Pelliccioni\inst{1} \and G. Umoret\inst{1}\\
 	\and M. D'Alfonso\inst{2} \and G. Gomez Ceballos\inst{2} \and C. Paus\inst{2} \and \underline{K. Yoon}\inst{2}}
 \institute[MIT]{\textsuperscript{1}Politecnico di Torino, Turin, Italy \and \inst{2} Massachusetts Institute of Technology, Cambridge, U.S.}
 \date{March 19, 2024}
+
+
 \begin{document}
 
 % Title
@@ -67,46 +138,72 @@
     \maketitle
 \end{frame}
 
-% Intro
-\begin{frame}{Documentation}
+% About
+\begin{frame}{About this analysis}
+	\ktodo{add paper front page}\\
+	\kbhl{HIG-23-005}\\
+	\vspace{1em}
+	\textbf{Collaboration}
 	\begin{itemize}
-		\item Collaboration of \textbf{MIT} and \textbf{Torino} groups, targeting different categories.
-		\item CADI \href{https://cms.cern.ch/iCMS/analysisadmin/cadilines?id=2681&ancode=HIG-23-005&tp=an&line=HIG-23-005}{HIG-23-005}
-		\item ARC: Anadi Canepa (chair), Stefan Spanier, Jian Wang, Angelo Giacomo Zecchinelli
-		\item CCLE: Christoph Maria Ernst Paus
-		\item Three analysis notes (two separate + one combined):\\
-		\textbf{AN-22-004} (MIT, v9), \textbf{AN-22-067} (Torino, v10), and \textbf{AN-23-004} (combined, v7)
-		\item Q\&A with ARC, L3, and L2 conveners: \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/HMesonGamma_QA}{Twiki Q\&A}
+		\item Collaboration of \textbf{MIT} and \textbf{Torino} groups, targeting different Higgs production categories.
 	\end{itemize}
+
+	\textbf{Conveners}
+	\begin{itemize}
+		\item \textbf{ARC}: Anadi Canepa (chair), Stefan Spanier, Jian Wang, Angelo Giacomo Zecchinelli
+		\item \textbf{CCLE}: Christoph Maria Ernst Paus
+	\end{itemize}
+
+	\textbf{Documentation}
+	\begin{itemize}
+		\item Relevant links: \href{https://cms.cern.ch/iCMS/analysisadmin/cadilines?id=2681&ancode=HIG-23-005&tp=an&line=HIG-23-005}{CADI}, \href{https://twiki.cern.ch/twiki/bin/view/CMS/HMesonGamma_QA}{TWiki}, \href{URL}{text}
+		\item Latest ANs (two individual + one combined):\\ \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022_004_v9.pdf}{AN-22-004} (MIT, v9), \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022_067_v10.pdf}{AN-22-067} (Torino, v10), and \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2023_004_v7.pdf}{AN-23-004} (combined, v7)
+	\end{itemize}
+\end{frame}
+
+%%%%%% 1. Section: Introduction %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Introduction \par%
+	\end{beamercolorbox}
+	\vfill
 \end{frame}
 
 % Motivations (table)
 \begin{frame}{Motivations}
+	\textbf{Higgs coupling with light quarks \((\PQu, \PQd, \PQs)\)}
 	\begin{itemize}
-		\item SM prediction of branching ratios of \(H\rightarrow \phi\gamma\) or \(\rho\gamma\) within reasonable reach (??)
-		\item ATLAS upper limit at \(95\)\% CL is \(\mathcal{O}(10^{-4})\) to \(\mathcal{O}(10^{-3})\).
-		\item \(K^*_0\) channel added as an extension of ditrack + gamma final state analyses.
+		\item Suppressed couplings and large QCD background hamper direct searches.
+		\item Class of decays suggested \(\htomg\), where \(\PM\) is a light-quark meson.
+		\item \textit{In this analysis}, \(\PM=\PGf, \PGrz, \PKstarz\) are considered.
+%		\item SM prediction of branching ratios of \(H\rightarrow \phi\gamma\) or \(\rho\gamma\) within reasonable reach (??)
+%		\item ATLAS upper limit at \(95\)\% CL is \(\mathcal{O}(10^{-4})\) to \(\mathcal{O}(10^{-3})\).
+%		\item \(K^*_0\) channel added as an extension of ditrack + gamma final state analyses.
 	\end{itemize}
 	\footnotesize
 	\begin{table}[!ht]
 		\centering
 		\begin{tabular}[t]{|l|c|c|l|l|}
 			\hline
-			\multicolumn{1}{|c|}{\cellcolor{lightgray}\small Channel} & \cellcolor{lightgray}\small Coupling & \cellcolor{lightgray}\small SM \(\mathcal{BR}(H\rightarrow M\gamma)\) & \multicolumn{1}{c|}{\cellcolor{lightgray}\small Limits on \(\mathcal{BR}\)} & \multicolumn{1}{c|}{\cellcolor{lightgray}\small Notes} \\
+			\multicolumn{1}{|c|}{\cellcolor{lightgray}\small Channel} & \cellcolor{lightgray}\small Coupling & \cellcolor{lightgray}\small SM \(\mathcal{BR}(\htomg)\)\\
 			\hline
 			
 			% phi
-			\multirow{2}{*}{\(H\rightarrow \phi\gamma\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.8) \times 10^{-5}\)\cite{K_nig_2015}} & Exp. \(4.2^{+1.8}_{-1.2}\times10^{-4}\) & ATLAS Run 2, \(35.6\;\textrm{fb}^{-1}\) \\ & & & Obs. \(5.0\times10^{-4}\) \cite{ATLAS_rhophigamma2023} & \(\phi\gamma\rightarrow K^+K^-\gamma\)\\
+			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.08) \times 10^{-5}\)\cite{K_nig_2015}} \\ & &\\
 			\hline
 			
 			% rho
-			\multirow{2}{*}{\(H\rightarrow \rho\gamma\)} & \multirow{2}{*}{\(u, d\)} & \multirow{2}{*}{\((2.31\pm0.11) \times 10^{-6}\)\cite{K_nig_2015}} & Exp. \(10.0^{+4.9}_{-2.8}\times10^{-4}\) & ATLAS Run 2, \(35.6\;\textrm{fb}^{-1}\) \\ & & & Obs. \(10.4\times10^{-4}\) \cite{ATLAS_rhophigamma2023} & \(\rho\gamma\rightarrow \pi^+\pi^-\gamma\) \\
+			\multirow{2}{*}{\(\Hgrho\)} & \multirow{2}{*}{\(u, d\)} & \multirow{2}{*}{\((2.31\pm0.11) \times 10^{-6}\)\cite{K_nig_2015}} \\ & & \\
 			\hline
 			
 			% K0star
-			\multirow{2}{*}{\(H\rightarrow K^*_0\gamma\)} & & \tiny (Only available for \(H\rightarrow d\bar{s} + \bar{d}s\)) & Exp. \(3.7^{+1.5}_{-1.0}\times10^{-4}\) & ATLAS Run 2, \(134\;\textrm{fb}^{-1}\) \\ & \multirow{-2}{*}{\(d\&s\) (flavor-changing)} & \(1.19\times10^{-11}\) \cite{Aranda_2020} & Obs. \(2.2\times10^{-4}\) \cite{ATLAS_omegaK0stargamma} & \(K^*_0\gamma\rightarrow K^\pm\pi^\mp\gamma\) \\
+			\multirow{2}{*}{\(\Hgkstar\)} & & \tiny (Only available for \(\PH\to \PQd\PAQs + \PAQd\PQs\)) \\
+			& \multirow{-2}{*}{\(d\&s\) (flavor-changing)} & \(1.19\times10^{-11}\) \cite{Aranda_2020} \\
 			\hline
 		\end{tabular}
+		\caption{\(\htomg\) channels considered in this analysis with their respective couplings and predicted branching ratios.}
 		\label{tab:Higgs_rare_decays}
 	\end{table}
 \end{frame}
@@ -114,27 +211,62 @@
 % Motivations (direct, indirect)
 \begin{frame}{Motivations}
 	
-	\(H \rightarrow M \gamma \) \cite{K_nig_2015}
+	\khl{\(\htomg\)}
 	\begin{itemize}
 		\item \textbf{Direct contribution}. The Higgs couples via Yukawa coupling to the quarks, one of which radiates a photon.
 		\item \textbf{Indirect contribution}. The off-shell \(\gamma^*\) or \(Z^*\) produced in \(H\rightarrow \gamma\gamma^*, \gamma Z^*\) \textit{fragments} into a meson.
 	\end{itemize}
-	Direct and indirect contributions interfere destructively. Due to light quark masses, direct contribution is smaller than indirect. Direct contribution is sensitive to deviation from SM Higgs couplings. Branching ratios are \(\mathcal{O}(10^{-5}\textup{--}10^{-6})\).
+	Direct and indirect contributions interfere destructively. Due to light quark masses, direct contribution is smaller than indirect. \textit{Direct contribution is sensitive to deviation from SM.} Branching ratios are \textit{typically} \(\mathcal{O}(10^{-5}\textup{--}10^{-6})\).
 	\begin{figure}[t!]
 		\centering
 		\begin{subfigure}[t]{0.48\linewidth}
 			\centering
-			\includegraphics[height=1.2in]{figures/Higgs_phirhoomega_direct.png}
+			\includegraphics[height=1.2in]{figures/misc/Higgs_phirhoomega_direct.png}
 			\caption{Direct contributions via Yukawa coupling to the light quarks.}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.48\linewidth}
 			\centering
-			\includegraphics[height=1.2in]{figures/Higgs_phirhoomega_indirect.png}
+			\includegraphics[height=1.2in]{figures/misc/Higgs_phirhoomega_indirect.png}
 			\caption{Indirect contribution via a virtual photon or \(Z\) boson.}
 		\end{subfigure}
 		\caption{Leading order Feynman diagrams to the \(H\rightarrow M\gamma\) processes. Image taken from Fig. 2 of \cite{K_nig_2015}.}
 	\end{figure}
+\end{frame}
+
+% Motivations (flavor-conserving, flavor-changing)
+\begin{frame}{Motivations}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\textbf{Flavor-conserving probes}
+			\begin{itemize}
+				\item \(\PGf\): \(\PQs\) quark coupling (diagrams above)
+				\item \(\PGrz\): \(\PQu\) and \(\PQd\) quark coupling
+			\end{itemize}
+			\vspace{1em}
+			\textbf{Flavor-changing probe}
+			\begin{itemize}
+				\item \(\PKstarz\): flavor-changing \(\PQs\) and \(\PQd\) quarks via weak interaction (diagrams below)
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\kmfig{fig1}{height=0.75\textheight}
+				\caption{Feynman diagrams showing the different Higgs boson decay mechanisms into a photon and a light meson (top: \(\PGf\) meson; bottom: \(\PKstarz\) meson).}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%%%%%% 2. Section: Introduction %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Introduction \par%
+	\end{beamercolorbox}
+	\vfill
 \end{frame}
 
 % Strategy (final states)
@@ -575,17 +707,17 @@
 	\begin{figure}
 		\begin{subfigure}{.36\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{figures/limitRho_final_feb29.pdf}
+			\includegraphics[width=\textwidth]{figures/23-005-v07-marked-figs/fig4-top-right.pdf}
 		\end{subfigure}%
 		\begin{subfigure}{.36\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{figures/limitPhi_final_feb29.pdf}
+			\includegraphics[width=\textwidth]{figures/23-005-v07-marked-figs/fig4-top-left.pdf}
 		\end{subfigure}\\
 		\begin{subfigure}{.36\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{figures/limitK0_final_feb29.pdf}
+			\includegraphics[width=\textwidth]{figures/23-005-v07-marked-figs/fig4-bottom.pdf}
 		\end{subfigure}
-		\vspace{-1em}
+		\vspace{0.1em}
 		\caption{Expected and observed upper limits on $\mathcal{B}(H\rightarrow\rho^0\gamma)$ (top left), $\mathcal{B}(H\rightarrow\phi\gamma)$ (top right), and $\mathcal{B}(H\rightarrow K^*_0\gamma)$ (bottom) split by analysis categories and combined. Green and yellow bands correspond to 1 and 2$\sigma$ confidence intervals in the expected upper limits.}
 	\end{figure}
 \end{frame}
@@ -607,6 +739,31 @@
 			\hline
 		\end{tabular}
 		\caption{Exclusion limits at 95\% CL on the branching fractions of the H boson decays. Observed and median expected limits with the upper and lower bounds in the expected 68\% CL intervals are reported.}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Results}
+	\begin{table}[!ht]
+		\centering
+		\begin{tabular}[t]{|l|c|c|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{\cellcolor{lightgray}\small Channel} & \cellcolor{lightgray}\small Coupling & \cellcolor{lightgray}\small SM \(\mathcal{BR}(\htomg)\) & \multicolumn{1}{c|}{\cellcolor{lightgray}\small Limits on \(\mathcal{BR}\)} & \multicolumn{1}{c|}{\cellcolor{lightgray}\small Notes} \\
+			\hline
+			
+			% phi
+			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.08) \times 10^{-5}\)\cite{K_nig_2015}} & Exp. \(4.2^{+1.8}_{-1.2}\times10^{-4}\) & ATLAS Run 2, \(35.6\;\textrm{fb}^{-1}\) \\ & & & Obs. \(5.0\times10^{-4}\) \cite{ATLAS_rhophigamma2023} & \(\phi\gamma\rightarrow K^+K^-\gamma\)\\
+			\hline
+			
+			% rho
+			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(u, d\)} & \multirow{2}{*}{\((2.31\pm0.11) \times 10^{-6}\)\cite{K_nig_2015}} & Exp. \(10.0^{+4.9}_{-2.8}\times10^{-4}\) & ATLAS Run 2, \(35.6\;\textrm{fb}^{-1}\) \\ & & & Obs. \(10.4\times10^{-4}\) \cite{ATLAS_rhophigamma2023} & \(\rho\gamma\rightarrow \pi^+\pi^-\gamma\) \\
+			\hline
+			
+			% K0star
+			\multirow{2}{*}{\(\Hgkstar\)} & & \tiny (Only available for \(\PH\to \PQd\PAQs + \PAQd\PQs\)) & Exp. \(3.7^{+1.5}_{-1.0}\times10^{-4}\) & ATLAS Run 2, \(134\;\textrm{fb}^{-1}\) \\ & \multirow{-2}{*}{\(d\&s\) (flavor-changing)} & \(1.19\times10^{-11}\) \cite{Aranda_2020} & Obs. \(2.2\times10^{-4}\) \cite{ATLAS_omegaK0stargamma} & \(K^*_0\gamma\rightarrow K^\pm\pi^\mp\gamma\) \\
+			\hline
+		\end{tabular}
+		\caption{\(\htomg\) channels considered in this analysis with their respective couplings and predicted branching ratios.}
+		\label{tab:Higgs_rare_decays_results}
 	\end{table}
 \end{frame}
 
