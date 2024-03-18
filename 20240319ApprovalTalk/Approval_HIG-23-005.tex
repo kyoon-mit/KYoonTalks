@@ -84,6 +84,7 @@
 \newcommand{\khl}[1]{\textbf{\color{structure}#1}}
 \newcommand{\ktodo}[1]{\colorbox{yellow!30}{{\color{red}\textsuperscript{\tiny FIX! }}#1}}
 \newcommand{\kmfig}[2]{\includegraphics[#2]{figures/23-005-v07-marked-figs/#1.pdf}}
+\newcommand{\ktmfig}[2]{\includegraphics[#2]{figures/23-004-v08-marked-figs/#1.pdf}}
 \newcommand{\kmtab}[2]{\includegraphics[#2]{tables/23-005-v07-marked-tables/#1.pdf}}
 \newcommand{\kblock}[2]{
 	\begin{tcolorbox}[colback=Thistle!5,colframe=BlueViolet,arc=0.5pt,outer arc=0.5pt,left=2pt,right=2pt,title=#1]
@@ -163,6 +164,14 @@
 \institute[MIT]{\textsuperscript{1}Politecnico di Torino, Turin, Italy \and \inst{2} Massachusetts Institute of Technology, Cambridge, U.S.}
 \date{March 19, 2024}
 
+\pdfinfo{
+	/Author (K. Yoon)
+	/Title (HIG-23-005)
+	/Subject (Approval Talk)
+	/Keywords (Higgs Rare Decays, Htorhophik0stargamma)
+	/Publisher (CMS)
+}
+
 
 \begin{document}
 
@@ -189,7 +198,7 @@
 
 	\textbf{Documentation}
 	\begin{itemize}
-		\item Relevant links: \href{https://cms.cern.ch/iCMS/analysisadmin/cadilines?id=2681&ancode=HIG-23-005&tp=an&line=HIG-23-005}{CADI}, \href{https://twiki.cern.ch/twiki/bin/view/CMS/HMesonGamma_QA}{TWiki}, \href{URL}{text}
+		\item Relevant links: \href{https://cms.cern.ch/iCMS/analysisadmin/cadilines?id=2681&ancode=HIG-23-005&tp=an&line=HIG-23-005}{CADI}, \href{https://twiki.cern.ch/twiki/bin/view/CMS/HMesonGamma_QA}{TWiki}
 		\item Latest ANs (two individual + one combined):\\ \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022_004_v9.pdf}{AN-22-004} (MIT, v9), \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022_067_v10.pdf}{AN-22-067} (Torino, v10), and \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2023_004_v7.pdf}{AN-23-004} (combined, v7)
 	\end{itemize}
 \end{frame}
@@ -775,10 +784,10 @@
 
 % MC/data background
 \begin{frame}{MC/Data Background Comparison}
-	content...
+	\ktodo{todo}
 \end{frame}
 
-%%%%%% 5. Section: MVA Selection %%%%%%
+%%%%%% 6. Section: MVA Selection %%%%%%
 \begin{frame}
 	\vfill
 	\centering
@@ -799,13 +808,11 @@
 			\begin{itemize}
 				\item BDT classifiers based on ROOT TMVA \cite{hoecker2009tmva}, optimized with the Gradient boosting method.
 				\item Training and validation samples defined by \textbf{meson mass SR \& sidebands}.
-				\item Signal \& Background events weighted by \(1/(\sigma_M/M)\), where
+				\item Signal \& Background events weighted by \(1/(\sigma M/M)\), where
 				\begin{align*}
-					\frac{\sigma_M}{M} = \sqrt{\left(\frac{\sigma_m}{m}\right)^2_{\mathrm{meson}} + \left(\frac{\sigma _E}{E}\right)^2_{\mathrm{\PGg}}}
+					\frac{\sigma M}{M} = \sqrt{\left(\frac{\sigma M}{M}\right)^2_{\mathrm{meson}} + \left(\frac{\sigma  E}{E}\right)^2_{\mathrm{\PGg}}}
 				\end{align*}
-				\ktodo{match formula in paper}
 				\item BDT classification is further split into \textbf{two sub-categories} (``cat0" and ``cat1") based on optimized discriminator threshold values to improve upper limit results.
-				\item \ktodo{write more stuff (e.g. cross-validation)}
 			\end{itemize}
 		}		
 	\end{itemize}
@@ -939,23 +946,22 @@
 		\begin{itemize}
 			\item Training results:
 		\end{itemize}
-		\ktodo{I NEED THE PLOT \textbf{FILES} (preferably pdf)}\\
 		\begin{figure}
 			\centering
 			\begin{subfigure}[t]{0.31\textwidth}
 				\caption*{\footnotesize\(\Hgrho\)}
-				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Rho.pdf}
+				\includegraphics[width=\textwidth]{figures/misc/MVAdisc_VBFcat_RhoCat_all.png}
 			\end{subfigure}%
 			\hfill
 			\begin{subfigure}[t]{0.31\textwidth}
 				\caption*{\footnotesize\(\Hgphi\)}
-				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Phi.pdf}
+				\includegraphics[width=\textwidth]{figures/misc/MVAdisc_VBFcat_PhiCat_all.png}
 			\end{subfigure}%
 			\begin{subfigure}[t]{0.31\textwidth}
 				\caption*{\footnotesize\(\Hgkstar\)}
-				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_K0s.pdf}
+				\includegraphics[width=\textwidth]{figures/misc/MVAdisc_VBFcat_K0StarCat_all.png}
 			\end{subfigure}
-			\caption{BDT-score shown for the three decay channels of High-\(\ptg\).}
+			\caption{BDT-score shown for the three decay channels of high-\(\ptg\) VBF.}
 		\end{figure}
 	\end{itemize}
 \end{frame}
@@ -968,33 +974,32 @@
 		\begin{itemize}
 			\item Training results:
 		\end{itemize}
-		\ktodo{I NEED THE PLOT \textbf{FILES} (preferably pdf)}\\
 		\begin{figure}
 			\centering
 			\begin{subfigure}[t]{0.31\textwidth}
 				\caption*{\footnotesize\(\Hgrho\)}
-				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Rho.pdf}
+				\includegraphics[width=\textwidth]{figures/misc/MVAdisc_VBFcatlow_RhoCat_12018.png}
 			\end{subfigure}%
 			\hfill
 			\begin{subfigure}[t]{0.31\textwidth}
 				\caption*{\footnotesize\(\Hgphi\)}
-				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Phi.pdf}
+				\includegraphics[width=\textwidth]{figures/misc/MVAdisc_VBFcatlow_PhiCat_12018.png}
 			\end{subfigure}%
 			\begin{subfigure}[t]{0.31\textwidth}
 				\caption*{\footnotesize\(\Hgkstar\)}
-				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_K0s.pdf}
+				\includegraphics[width=\textwidth]{figures/misc/MVAdisc_VBFcatlow_K0StarCat_12018.png}
 			\end{subfigure}
-			\caption{BDT-score shown for the three decay channels of Low-\(\ptg\).}
+			\caption{BDT-score shown for the three decay channels of low-\(\ptg\) VBF.}
 		\end{figure}
 	\end{itemize}
 \end{frame}
 
-%%%%%% 6. Section: Signal Modeling %%%%%%
+%%%%%% 7. Section: Signal Modeling %%%%%%
 \begin{frame}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
-		\usebeamerfont{title}\Huge Signal Modeling \& Systematic Uncertainties \par%
+		\usebeamerfont{title}\Huge Signal \& Background Modeling \par%
 	\end{beamercolorbox}
 	\vfill
 \end{frame}
@@ -1018,11 +1023,36 @@
 		\vspace{0.5em}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.52\textheight]{figures/misc/signal_ggH__RhoCat_GFcat_2018_withMVA.png}
+			\includegraphics[height=0.52\textheight]{figures/misc/signal_ggH_Rho_cat0.pdf}
 			\vspace{-1em}
-			\caption{Example fitting of the TTCB function to the \(\Hgrho\) selected signal samples in the ggH category.}
+			\caption{Example fitting of the TTCB function to the \(\Hgrho\) selected signal samples from BDT cat0 in the ggH category.}
 		\end{figure}
 	\end{itemize}
+\end{frame}
+
+% Background modeling
+\begin{frame}{Background modeling}
+	\begin{itemize}
+		\item Analytic functions: \textbf{Chebychev} polynomials (main), \textbf{Bernstein} polynomials and \textbf{exponential} series (determination of shape uncertainties).
+		\item Fitting region defined as \(m_{M\PGg}\) sidebands.\\
+		\begin{itemize}
+			\item ggH category: \(110 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 160\) GeV. 
+			\item VBF categories (high \& low \(\ptg\)): \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 170\) GeV.
+			\item VH category: \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 150\) GeV.
+		\end{itemize}
+		\item Degree of polynomial determined with \textbf{F-test}.
+		\item \textbf{Bias test}.
+	\end{itemize}
+\end{frame}
+
+%%%%%% 8. Section: Systematic Uncertainties %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Systematic Uncertainties \par%
+	\end{beamercolorbox}
+	\vfill
 \end{frame}
 
 % Systematic uncertainties
@@ -1058,57 +1088,6 @@
 	\end{table}
 \end{frame}
 
-% Background modeling
-\begin{frame}{Background modeling}
-	\begin{itemize}
-		\item Analytic functions: \textbf{Chebychev} polynomials (main), \textbf{Bernstein} polynomials and \textbf{exponential} series (determination of shape uncertainties).
-		\item Fitting region defined as \(m_{M\PGg}\) sidebands.\\
-		\begin{itemize}
-			\item ggH category: \(110 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 160\) GeV. 
-			\item VBF categories (high \& low \(\ptg\)): \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 170\) GeV.
-			\item VH category: \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 150\) GeV.
-		\end{itemize}
-		\item Degree of polynomial determined with \textbf{F-test}.
-		\item \textbf{Bias test}.
-	\end{itemize}
-\end{frame}
-
-% Signal & Background fits
-\begin{frame}{Signal \& Background Post-fit Distributions}
-	\begin{figure}
-		\centering
-		\begin{subfigure}{0.31\textwidth}
-			\kmfig{fig3-top-left}{width=\textwidth}
-		\end{subfigure}%
-		\hfill
-		\begin{subfigure}{0.31\textwidth}
-			\kmfig{fig3-top-right}{width=\textwidth}
-		\end{subfigure}%
-		\hfill
-		\begin{subfigure}{0.31\textwidth}
-			\kmfig{fig3-middle-left}{width=\textwidth}
-		\end{subfigure}
-	\end{figure}
-\end{frame}
-
-% Signal & Background fits
-\begin{frame}{Signal \& Background Post-fit Distributions}
-	\begin{figure}
-		\centering
-		\begin{subfigure}{0.31\textwidth}
-			\kmfig{fig3-middle-right}{width=\textwidth}
-		\end{subfigure}%
-		\hfill
-		\begin{subfigure}{0.31\textwidth}
-			\kmfig{fig3-bottom-left}{width=\textwidth}
-		\end{subfigure}%
-		\hfill
-		\begin{subfigure}{0.31\textwidth}
-			\kmfig{fig3-bottom-right}{width=\textwidth}
-		\end{subfigure}
-	\end{figure}
-\end{frame}
-
 %%%%%% 9. Section: Results %%%%%%
 \begin{frame}
 	\vfill
@@ -1119,17 +1098,193 @@
 	\vfill
 \end{frame}
 
-% Unblinded limits (methodology)
-\begin{frame}{Results}
+% Signal & Background fits (ggH cat0)
+\begin{frame}{Signal \& Background Post-fit Distributions}
 	\begin{itemize}
-		\item \khl{Upper limits} on $\mathcal{B}(H\rightarrow\rho^0\PGg)$, $\mathcal{B}(H\rightarrow\phi\PGg)$, and $\mathcal{B}(H\rightarrow K^*_0\PGg)$ set at 95\% CL.
+		\item \khl{ggH categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[t]{0.31\textwidth}
+			\kmfig{fig3-top-left}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), ggH cat0}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\kmfig{fig3-middle-left}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), ggH cat0}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\kmfig{fig3-bottom-left}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), ggH cat0}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the ggH cat0 channels.}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits (ggH cat 1)
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{itemize}
+		\item \khl{ggH categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-GFcat-bdt1-Rho}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), ggH cat1}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-GFcat-bdt1-Phi}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), ggH cat1}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-GFcat-bdt1-K0s}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), ggH cat1}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the ggH cat1 channels.}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits (VBF cat0)
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{itemize}
+		\item \khl{High-\(\ptg\) VBF categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-top-right}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), high-\(\ptg\) VBF cat0}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcat-bdt0-Phi}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), high-\(\ptg\) VBF cat0}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcat-bdt0-K0s}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), high-\(\ptg\) VBF cat0}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the high-\(\ptg\) VBF cat0 channels.}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits (VBF cat 1)
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{itemize}
+		\item \khl{High-\(\ptg\) VBF categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcat-bdt1-Rho}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), high-\(\ptg\) VBF cat1}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcat-bdt1-Phi}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), high-\(\ptg\) VBF cat1}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcat-bdt1-K0s}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), high-\(\ptg\) VBF cat1}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the high-\(\ptg\) cat1 channels.}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits (VBFlow cat0)
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{itemize}
+		\item \khl{Low-\(\ptg\) VBF categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-bottom-right}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), low-\(\ptg\) VBF cat0}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcatlow-bdt0-Phi}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), low-\(\ptg\) VBF cat0}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcatlow-bdt0-K0s}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), low-\(\ptg\) VBF cat0}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the low-\(\ptg\) VBF cat0 channels.}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits (VBFlow cat 1)
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{itemize}
+		\item \khl{Low-\(\ptg\) VBF categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcatlow-bdt1-Rho}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), low-\(\ptg\) VBF cat1}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcatlow-bdt1-Phi}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), low-\(\ptg\) VBF cat1}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-VBFcatlow-bdt1-K0s}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), low-\(\ptg\) VBF cat1}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the low-\(\ptg\) cat1 channels.}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits (VH)
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{itemize}
+		\item \khl{VH categories}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-Vcat-Rho}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgrho\), VH}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-Vcat-Phi}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgphi\), VH}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\textwidth}
+			\ktmfig{mass-postfit-Vcat-K0s}{width=\textwidth}
+			\caption*{\footnotesize \(\Hgkstar\), VH}
+		\end{subfigure}
+		\caption{Post-fit \(m_{\PM\PGg}\) distributions in data and the background model for the VH channels.}
+	\end{figure}
+\end{frame}
+
+
+% Unblinded limits (methodology)
+\begin{frame}{Upper Limits}
+	\begin{itemize}
+		\item \khl{Upper limits} on $\mathcal{B}(H\rightarrow\rho^0\PGg)$, $\mathcal{B}(H\rightarrow\phi\PGg)$, and $\mathcal{B}(\Hgkstar)$ set at 95\% CL.
 		\item CLs profile-likelihood ratio used as test-statistics, with the asymptotic approximation.
 		\item Systematic uncertainties treated as nuisance parameters. 
 	\end{itemize}
 \end{frame}
 
 % Unblinded limits (bands)
-\begin{frame}{Results}
+\begin{frame}{Upper Limits}
 	\begin{figure}
 		\begin{subfigure}{.36\textwidth}
 			\centering
@@ -1185,7 +1340,17 @@
 %%%%%%%%%%%%%% BACKUP %%%%%%%%%%%%%%%%%%
 % Important: comparison with ATLAS (backup)
 
-\begin{frame}{Bibliography}
+%%%%%% Section: Backup Slides %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Backup Slides \par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+
+\begin{frame}{References}
 	\scriptsize
 	\bibliographystyle{JHEP}
 	\bibliography{refs.bib}
