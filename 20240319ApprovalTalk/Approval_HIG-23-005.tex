@@ -466,13 +466,17 @@
 		\begin{equation*}
 			\text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}}
 		\end{equation*}\\
-		For the tau-like trigger, Data = Single Muon, MC = Drell-Yan. Photon-leg and tau-leg efficiencies measured separately, where\\
-		\ktodo{do I need these equations?}
-		\begin{align*}
-			\epsilon^{\mathrm{HLT}}_\PGg &= \frac{\text{HLT\_Mu17\_Photon30}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}\\
-			\\
-			\epsilon^{\mathrm{HLT}}_\mathrm{TwoProngs} &= \frac{\text{HLT\_IsoMu24\_TwoProngs35}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}
-		\end{align*}
+		\begin{itemize}
+			\item For the tau-like trigger, Data = Single Muon, MC = Drell-Yan. Photon-leg and tau-leg efficiencies measured separately, where\\
+			{\small
+				\begin{align*}
+					\epsilon^{\mathrm{HLT}}_\PGg &= \frac{\text{HLT\_Mu17\_Photon30}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}\\
+					\\
+					\epsilon^{\mathrm{HLT}}_\mathrm{TwoProngs} &= \frac{\text{HLT\_IsoMu24\_TwoProngs35}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}
+			\end{align*}}
+			\vspace{0.5em}
+			\item Modification on photon-leg added to reduce fake photon rate by forcing the photon to be a FSR.
+		\end{itemize}		
 	\end{itemize}
 \end{frame}
 
@@ -577,7 +581,6 @@
 		\begin{itemize}
 			\item \(\PGg\)-ID signal eff. = MVA-based selection ID \cite{photon_mvaid}
 			\item \(\ptg\) cut based on trigger
-			\item \ktodo{ggH \& VH---\textbf{BUT PAPER IS NOT FIXED!}}.
 			\item ggH/VBF: conversion veto, VH: pixel veto.
 			\item Highest-\(\ptg\) photon chosen as candidate.
 		\end{itemize}
@@ -688,7 +691,7 @@
 				\hline
 				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{\ptg}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{\ptg}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
 				\hline
-				\(p^M_T\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 40\)} & \multicolumn{1}{C{8em}}{\(> 40\)} & \multicolumn{1}{C{8em}|}{\(> 40\)}\\
+				\(p^M_T\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 30\)} & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}|}{\(> 38\)}\\
 				\(I^{trk}_M\) & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}|}{\(> 0.8\)}\\
 				\(I^{neu}_M\) & \multicolumn{1}{C{8em}}{\(> 0.8\)} & \multicolumn{1}{C{8em}}{-} & \multicolumn{1}{C{8em}}{-} & \multicolumn{1}{C{8em}|}{-}\\
 				\hline
@@ -787,12 +790,15 @@
 				\hline
 				Meson Isolation & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) \\
 				\hline
+				Photon ID & & \(\PGg\) mvaID & \(\PGg\) mvaID\\
+				\hline
 				& & \(M_{\jj}\) & \(M_{\jj}\) \\
 				Jet-related & & \(\Delta\phi_{\jj}\) & \(\Delta\phi_{\jj}\) \\
 				& & \(z^*\) & \(z^*\) \\
 			\end{tabular}
 			\caption{Input variables used for ggH and VBF categories.}
 		\end{table}
+		\vspace{-2em}
 		{\hspace*{0pt}\hfill\footnotesize \(z^*\) is the Zeppenfeld variable, defined as \(z^*=|\eta_{\PM\PGg} - 0.5(\eta_\jone + \eta_\jtwo)/|\Delta\eta_\jj|\).}
 	\end{itemize}
 \end{frame}
@@ -866,16 +872,17 @@
 			\hspace{2em}\textbf{Signal}: MC-generated\\
 			\hspace{2em}\textbf{Background}: \(\PGg\)+jets simulation and \(\PGg\) di-track events where the two tracks have the same charge.
 			\vspace{1em}\\
-			\item 7 input variables\\
+			\item 8 input variables\\
 			Variable that is correlated with Higgs candidate mass is divided by the mass.\\
-			\ktodo{does not match with paper!}
 			\vspace{0.5em}
+			\hspace{2em}
 			\begin{tabular}{|l | l|}
 				\hline
 				\(p^{\PM\PGg}_T\) & Higgs candidate \(\pt\)\\
 				\(\ptg\) & photon \(\pt\)\\
 				\(\ptm/m_{\PM\PGg}\) & meson \(\pt\) divided by Higgs candidate mass\\
 				\(I^{\mathrm{trk}}(\mathrm{trk_1})\) & leading-track charged isolation\\
+				\(\PGg\) mvaID & photon identification discriminator\\
 				\(M_{\jj}\) & di-jet invariant mass\\
 				\(\Delta\phi_{\jj}\) & \(\Delta\phi\) of the two jets\\
 				\(z*\) & Zeppenfeld variable\\
@@ -1270,12 +1277,12 @@
 			\multicolumn{1}{|c|}{\cellcolor{lightgray}\small Channel} & \cellcolor{lightgray}\small Coupling & \cellcolor{lightgray}\small SM \(\mathcal{BR}(\htomg)\) & \multicolumn{1}{c|}{\cellcolor{lightgray}\small ATLAS Limits (\(10^{-4}\))} & \multicolumn{1}{c|}{\cellcolor{lightgray}\small \textbf{Our Limits (\(10^{-4}\))}} \\
 			\hline
 			
-			% phi
-			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.08) \times 10^{-5}\)\cite{K_nig_2015}} & \cellcolor{RoyalBlue!30}Exp. \(4.2^{+1.8}_{-1.2}\) & \cellcolor{GreenYellow!30}\textbf{Exp. \(2.88^{+1.33}_{-0.83}\)} \\ & & & \cellcolor{RoyalBlue!30}Obs. \(5.0\) \cite{ATLAS_rhophigamma2023} & \cellcolor{GreenYellow!30}\textbf{Obs. \(2.97\)}\\
-			\hline
-			
 			% rho
 			\multirow{2}{*}{\(\Hgrho\)} & \multirow{2}{*}{\(u, d\)} & \multirow{2}{*}{\((2.31\pm0.11) \times 10^{-6}\)\cite{K_nig_2015}} & \cellcolor{RoyalBlue!30}Exp. \(10.0^{+4.9}_{-2.8}\) & \cellcolor{GreenYellow!30}\textbf{Exp. \(5.71^{+2.37}_{-1.63}\)} \\ & & & \cellcolor{RoyalBlue!30}Obs. \(10.4\) \cite{ATLAS_rhophigamma2023} & \cellcolor{GreenYellow!30}\textbf{Obs. \( 3.74\)} \\
+			\hline
+			
+			% phi
+			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.08) \times 10^{-5}\)\cite{K_nig_2015}} & \cellcolor{RoyalBlue!30}Exp. \(4.2^{+1.8}_{-1.2}\) & \cellcolor{GreenYellow!30}\textbf{Exp. \(2.88^{+1.33}_{-0.83}\)} \\ & & & \cellcolor{RoyalBlue!30}Obs. \(5.0\) \cite{ATLAS_rhophigamma2023} & \cellcolor{GreenYellow!30}\textbf{Obs. \(2.97\)}\\
 			\hline
 			
 			% K0star
