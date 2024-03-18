@@ -159,9 +159,9 @@
 %%%
 
 \title[Approval Talk HIG-23-005]{{\color{Periwinkle}Approval Talk [HIG-23-005]}\\{\huge``Search for rare decays of the Higgs boson into a photon\\and a \(\rho^0\), \(\phi\) or \(K^{*0}\) meson"}}
-\author[K. Yoon]{R. Covarelli\textsuperscript{1} \and M. Pelliccioni\inst{1} \and G. Umoret\inst{1}\\
-	\and M. D'Alfonso\inst{2} \and G. Gomez Ceballos\inst{2} \and C. Paus\inst{2} \and \underline{K. Yoon}\inst{2}}
-\institute[MIT]{\textsuperscript{1}Politecnico di Torino, Turin, Italy \and \inst{2} Massachusetts Institute of Technology, Cambridge, U.S.}
+\author[K. Yoon]{R. Covarelli\textsuperscript{1} \and M. Pelliccioni\inst{1,2} \and G. Umoret\inst{1,2}\\
+	\and M. D'Alfonso\inst{3} \and G. Gomez Ceballos\inst{3} \and C. Paus\inst{3} \and \underline{K. Yoon}\inst{3}}
+\institute[MIT]{\textsuperscript{1}INFN Torino, Turin, Italy \and \inst{2} Università degli Studi di Torino, Turin, Italy \and \inst{3} Massachusetts Institute of Technology, Cambridge, U.S.}
 \date{March 19, 2024}
 
 \pdfinfo{
@@ -250,45 +250,28 @@
 	\end{table}
 \end{frame}
 
-% Motivations (direct, indirect)
-\begin{frame}{Motivations}
-	
-	\khl{\(\htomg\)}
-	\begin{itemize}
-		\item \textbf{Direct contribution}. The Higgs couples via Yukawa coupling to the quarks, one of which radiates a photon.
-		\item \textbf{Indirect contribution}. The off-shell \(\PGg^*\) or \(Z^*\) produced in \(H\rightarrow \PGg\PGg^*, \PGg Z^*\) \textit{fragments} into a meson.
-	\end{itemize}
-	Direct and indirect contributions interfere destructively. Due to light quark masses, direct contribution is smaller than indirect. \textit{Direct contribution is sensitive to deviation from SM.} Branching ratios are \textit{typically} \(\mathcal{O}(10^{-5}\textup{--}10^{-6})\).
-	\begin{figure}[t!]
-		\centering
-		\begin{subfigure}[t]{0.48\linewidth}
-			\centering
-			\includegraphics[height=1.2in]{figures/misc/Higgs_phirhoomega_direct.png}
-			\caption{Direct contributions via Yukawa coupling to the light quarks.}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[t]{0.48\linewidth}
-			\centering
-			\includegraphics[height=1.2in]{figures/misc/Higgs_phirhoomega_indirect.png}
-			\caption{Indirect contribution via a virtual photon or \(Z\) boson.}
-		\end{subfigure}
-		\caption{Leading order Feynman diagrams to the \(H\rightarrow M\PGg\) processes. Image taken from Fig. 2 of \cite{K_nig_2015}.}
-	\end{figure}
-\end{frame}
-
 % Motivations (flavor-conserving, flavor-changing)
 \begin{frame}{Motivations}
 	\begin{columns}
+		\small
 		\begin{column}{0.4\textwidth}
-			\textbf{Flavor-conserving probes}
+			{\large\khl{\(\htomg\)}}\\
+			\vspace{1em}
+			\textbf{1. Flavor-conserving probes}
 			\begin{itemize}
-				\item \(\PGf\): \(\PQs\) quark coupling (diagrams above)
+				\item \textbf{Direct contribution}. The Higgs couples via Yukawa coupling to the quarks, one of which radiates a photon.
+				\item \textbf{Indirect contribution}. The off-shell \(\PGg^*\) or \(Z^*\) produced in \(H\rightarrow \PGg\PGg^*, \PGg Z^*\) \textit{fragments} into a meson.
+			\end{itemize}
+			Direct and indirect contributions interfere destructively. Due to light quark masses, direct contribution is smaller than indirect. \textit{Direct contribution is sensitive to deviation from SM.} Branching ratios are \textit{typically} \(\mathcal{O}(10^{-5}\textup{--}10^{-6})\).\\
+			\vspace{0.3em}
+			\begin{itemize}
+				\item \(\PGf\): \(\PQs\) quark coupling \textit{(diagrams above)}
 				\item \(\PGrz\): \(\PQu\) and \(\PQd\) quark coupling
 			\end{itemize}
-			\vspace{1em}
-			\textbf{Flavor-changing probe}
+			\vspace{0.5em}
+			\textbf{2. Flavor-changing probe}
 			\begin{itemize}
-				\item \(\PKstarz\): flavor-changing \(\PQs\) and \(\PQd\) quarks via weak interaction (diagrams below)
+				\item \(\PKstarz\): flavor-changing \(\PQs\) and \(\PQd\) quarks via weak interaction \textit{(diagrams below)}
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -374,7 +357,7 @@
 				\vspace{1em}
 				\textbf{Low-\(\ptg\) VBF}
 				\begin{itemize}
-					\item \(40 < \ptg < 75\) GeV.
+					\item \(38 < \ptg < 75\) GeV.
 					\item No \(\Pe/\PGm\)
 %					\item \(|\Delta\eta_{\jj}| > 3\), \(M_{JJ} > 300\) GeV
 				\end{itemize}
@@ -482,14 +465,7 @@
 		Trigger efficiency \textbf{scale factor} defined as the ratio of data vs. MC efficiency.
 		\begin{equation*}
 			\text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}}
-		\end{equation*}
-	\end{itemize}
-\end{frame}
-
-% Triggers (equations)
-\begin{frame}{Triggers}
-	\begin{itemize}
-		\item \khl{HLT Efficiencies and Scale Factors}\\
+		\end{equation*}\\
 		For the tau-like trigger, Data = Single Muon, MC = Drell-Yan. Photon-leg and tau-leg efficiencies measured separately, where\\
 		\ktodo{do I need these equations?}
 		\begin{align*}
@@ -521,31 +497,6 @@
 			\end{subfigure}
 			\vspace{-1em}
 		\caption{Photon-leg and tau-leg efficiencies of the tau-like trigger.}
-		\end{figure}
-	\end{itemize}
-\end{frame}
-
-% Triggers (vbf)
-\begin{frame}{Triggers}
-	\begin{itemize}
-		\item \khl{HLT Efficiencies and Scale Factors}\\
-		VBF-dedicated trigger efficiencies MC (red) vs. Data (blue).\\
-		\vspace{1em}	
-		\begin{figure}
-			\centering
-			\begin{subfigure}[t]{0.31\linewidth}
-				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat12016_WP90_barrel.png}
-				\caption{VBF trigger photon-leg efficiencies for MC and data.}
-			\end{subfigure}%
-			\hfill
-			\begin{subfigure}[t]{0.31\linewidth}
-				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat2017_WP90_barrel.png}
-			\end{subfigure}%
-			\hfill
-			\begin{subfigure}[t]{0.31\linewidth}
-				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat2018_WP90_barrel.png}
-			\end{subfigure}
-			\caption{VBF-dedicated trigger photon-leg efficiencies for MC and data, shown for the \(\Hgrho\) channel in 2016 (top-left), 2017 (top-right), and 2018 (bottom).}
 		\end{figure}
 	\end{itemize}
 \end{frame}
@@ -1273,7 +1224,6 @@
 	\end{figure}
 \end{frame}
 
-
 % Unblinded limits (methodology)
 \begin{frame}{Upper Limits}
 	\begin{itemize}
@@ -1348,6 +1298,30 @@
 		\usebeamerfont{title}\Huge Backup Slides \par%
 	\end{beamercolorbox}
 	\vfill
+\end{frame}
+
+% Triggers (vbf)
+\begin{frame}{VBF Triggers}
+	\begin{itemize}
+		\item VBF-dedicated trigger efficiencies MC (red) vs. Data (blue).\\
+		\vspace{1em}	
+		\begin{figure}
+			\centering
+			\begin{subfigure}[t]{0.31\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat12016_WP90_barrel.png}
+				\caption{VBF trigger photon-leg efficiencies for MC and data.}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat2017_WP90_barrel.png}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat2018_WP90_barrel.png}
+			\end{subfigure}
+			\caption{VBF-dedicated trigger photon-leg efficiencies for MC and data, shown for the \(\Hgrho\) channel in 2016 (top-left), 2017 (top-right), and 2018 (bottom).}
+		\end{figure}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{References}
