@@ -79,8 +79,18 @@
 	urlcolor=blue
 }
 
+\hypersetup{
+	colorlinks=true,
+	linkcolor=BlueViolet,
+	filecolor=BlueViolet,      
+	urlcolor=BlueViolet,
+	pdftitle={HIG-23-005},
+	pdfpagemode=FullScreen,
+}
+
 \newcommand{\krhl}[1]{\textbf{\LARGE\color{red}#1}}
 \newcommand{\kbhl}[1]{\textbf{\LARGE\color{BlueViolet}#1}}
+\newcommand{\kblhl}[1]{\textbf{\color{Black}#1}}
 \newcommand{\khl}[1]{\textbf{\color{structure}#1}}
 \newcommand{\ktodo}[1]{\colorbox{yellow!30}{{\color{red}\textsuperscript{\tiny FIX! }}#1}}
 \newcommand{\kmfig}[2]{\includegraphics[#2]{figures/23-005-v07-marked-figs/#1.pdf}}
@@ -159,7 +169,7 @@
 %%%
 
 \title[Approval Talk HIG-23-005]{{\color{Periwinkle}Approval Talk [HIG-23-005]}\\{\huge``Search for rare decays of the Higgs boson into a photon\\and a \(\rho^0\), \(\phi\) or \(K^{*0}\) meson"}}
-\author[K. Yoon]{R. Covarelli\textsuperscript{1} \and M. Pelliccioni\inst{1,2} \and G. Umoret\inst{1,2}\\
+\author[K. Yoon]{R. Covarelli\textsuperscript{1,2} \and M. Pelliccioni\inst{1} \and G. Umoret\inst{1,2}\\
 	\and M. D'Alfonso\inst{3} \and G. Gomez Ceballos\inst{3} \and C. Paus\inst{3} \and \underline{K. Yoon}\inst{3}}
 \institute[MIT]{\textsuperscript{1}INFN Torino, Turin, Italy \and \inst{2} Università degli Studi di Torino, Turin, Italy \and \inst{3} Massachusetts Institute of Technology, Cambridge, U.S.}
 \date{March 19, 2024}
@@ -172,7 +182,6 @@
 	/Publisher (CMS)
 }
 
-
 \begin{document}
 
 % Title
@@ -180,9 +189,32 @@
     \maketitle
 \end{frame}
 
+%%%%%% Outline %%%%%%
+\begin{frame}{Outline}
+	\begin{columns}
+		\centering
+		\begin{column}{0.9\textwidth}
+			\kblhl{About this analysis}\dotfill\ref{fr:about}\\
+			\vspace{1em}
+			\kblhl{Introduction}\dotfill\ref{sec:intro}\\
+			\kblhl{Analysis Strategy}\dotfill\ref{sec:anstrat}\\
+			\kblhl{Triggers}\dotfill\ref{sec:trig}\\
+			\kblhl{Simulated Samples}\dotfill\ref{sec:simsam}\\
+			\kblhl{Event Selection}\dotfill\ref{sec:evsel}\\
+			\kblhl{Multivariate Analysis Selection}\dotfill\ref{sec:mva}\\
+			\kblhl{Signal \& Background Modeling}\dotfill\ref{sec:model}\\
+			\kblhl{Systematic Uncertainties}\dotfill\ref{sec:syst}\\
+			\kblhl{Results}\dotfill\ref{sec:res}\\
+			\vspace{1em}
+			\kblhl{Backup Slides}\dotfill\ref{sec:backup}\\
+			\kblhl{References}\dotfill\ref{fr:refs}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 % About
 \begin{frame}{About this analysis}
-	\ktodo{add paper front page}\\
+	\label{fr:about}
 	\kbhl{HIG-23-005}\\
 	\vspace{1em}
 	\textbf{Collaboration}
@@ -198,13 +230,14 @@
 
 	\textbf{Documentation}
 	\begin{itemize}
-		\item Relevant links: \href{https://cms.cern.ch/iCMS/analysisadmin/cadilines?id=2681&ancode=HIG-23-005&tp=an&line=HIG-23-005}{CADI}, \href{https://twiki.cern.ch/twiki/bin/view/CMS/HMesonGamma_QA}{TWiki}
+		\item Relevant links: \href{https://cms.cern.ch/iCMS/analysisadmin/cadilines?id=2681&ancode=HIG-23-005&tp=an&line=HIG-23-005}{CADI}, \href{https://twiki.cern.ch/twiki/bin/view/CMS/HMesonGamma_QA}{TWiki}, \href{https://indico.cern.ch/event/1298068/\#29-pre-approval-of-hig-23-005}{Pre-Approval Talk}, \href{https://indico.cern.ch/event/1319601/\#21-unblinding-of-hig-23-005-se}{Unblinding Talk}
 		\item Latest ANs (two individual + one combined):\\ \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022_004_v9.pdf}{AN-22-004} (MIT, v9), \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022_067_v10.pdf}{AN-22-067} (Torino, v10), and \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2023_004_v7.pdf}{AN-23-004} (combined, v7)
 	\end{itemize}
 \end{frame}
 
 %%%%%% 1. Section: Introduction %%%%%%
 \begin{frame}
+	\label{sec:intro}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -286,6 +319,7 @@
 
 %%%%%% 2. Section: Analysis Strategy %%%%%%
 \begin{frame}
+	\label{sec:anstrat}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -307,7 +341,7 @@
 				\begin{subfigure}[b]{0.26\textwidth}
 					\centering
 					\includegraphics[width=\textwidth]{feynman-diagrams/rho_ditrack.pdf}
-					\caption*{\footnotesize \(\mathcal{BR}(\PGrz\to\PGp^+\PGp^-) \sim= 100\%\)}
+					\caption*{\footnotesize \(\mathcal{BR}(\PGrz\to\PGp^+\PGp^-) \sim100\%\)}
 				\end{subfigure}
 				\hfill
 				\begin{subfigure}[b]{0.26\textwidth}
@@ -377,6 +411,7 @@
 
 %%%%%% 3. Section: Triggers %%%%%%
 \begin{frame}
+	\label{sec:trig}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -400,7 +435,7 @@
 				\begin{itemize}
 					\item Photon \(\ptg>35\) GeV + tau-like jet \(\pt^\mathrm{j}>35\) GeV.
 					\item Tau-leg similar to isolated di-track system.
-					\item Active during 2018.
+					\item Luminosity:\\\(39.50\;\mathrm{fb^{-1}}\) (2018).
 %					\item Trigger efficiencies derived from \(\PZ\to\PGmm\PGmp\).
 				\end{itemize}
 			}
@@ -412,8 +447,9 @@
 				\textbf{High-\(\ptg\) photon + VBF-like jets}\\
 				\hspace{2em}\textrightarrow\hspace{0.5em}\textbf{\color{ForestGreen}high-\(\ptg\) VBF}
 				\begin{itemize}
-					\item Photon \(\ptg>35\) GeV + di-jet with large \(M_{\jj}\) and \(\Delta\eta_\jj\).
+					\item Photon \(\ptg>75\) GeV + di-jet with large \(M_{\jj}\) and \(\Delta\eta_\jj\).
 					\item Active partly during 2016-17 and fully during 2018.
+					\item Luminosities:\\\(28.2\;\mathrm{fb^{-1}}\) (2016), \(7.7 \;\mathrm{fb^{-1}}\) (2017), \(60\;\mathrm{fb^{-1}}\) (2018).
 				\end{itemize}
 			}
 			\vfill
@@ -426,36 +462,12 @@
 				\begin{itemize}
 					\item Single or double-muon (electron) lowest \(\pt\) thresholds vary depending on year.
 					\item To complement selection, triggers requiring a lepton and a photon is also used.
+					\item Luminosity:\\\(138\;\mathrm{fb^{-1}}\) (2018).
 				\end{itemize}
 			}
 			\vfill
 		\end{column}
 	\end{columns}
-\end{frame}
-
-% Triggers (summary)
-\begin{frame}{Triggers}
-	\begin{itemize}
-		\item \khl{High Level Triggers (HLT)}
-		\vspace{1em}
-	\end{itemize}
-	\begin{table}
-		\centering
-		\small
-		\begin{tabular}{|l|c|c|c|c|}
-			\hline
-			& \textbf{ggH} & \textbf{High-\(\mathbf{\ptg}\) VBF} & \textbf{Low-\(\mathbf{\ptg}\) VBF} & \textbf{VH} \\
-			\hline
-			& & & & single/di-muon\\
-			Triggers & tau-like & VBF-like & tau-like & single/di-electron\\
-			& & & & muon+gamma\\
-			\hline
-			& & 28.2 (2016) & & \\
-			Luminosity (\(\mathrm{fb^{-1}}\)) & 39.50 (2018) & 7.7 (2017) & 39.50 (2018) & 138 (2016--2018) \\
-			& & 60 (2018) & & \\
-			\hline
-		\end{tabular}
-	\end{table}
 \end{frame}
 
 % Triggers (efficiency)
@@ -467,20 +479,20 @@
 			\text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}}
 		\end{equation*}\\
 		\begin{itemize}
-			\item For the tau-like trigger, Data = Single Muon, MC = Drell-Yan. Photon-leg and tau-leg efficiencies measured separately, where\\
-			{\small
-				\begin{align*}
-					\epsilon^{\mathrm{HLT}}_\PGg &= \frac{\text{HLT\_Mu17\_Photon30}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}\\
-					\\
-					\epsilon^{\mathrm{HLT}}_\mathrm{TwoProngs} &= \frac{\text{HLT\_IsoMu24\_TwoProngs35}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}
-			\end{align*}}
-			\vspace{0.5em}
+			\item For the tau-like trigger, Data = Single Muon, MC = Drell-Yan.\\ Photon-leg and tau-leg efficiencies measured separately.\\
+%			{\small
+%				\begin{align*}
+%					\epsilon^{\mathrm{HLT}}_\PGg &= \frac{\text{HLT\_Mu17\_Photon30}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}\\
+%					\\
+%					\epsilon^{\mathrm{HLT}}_\mathrm{TwoProngs} &= \frac{\text{HLT\_IsoMu24\_TwoProngs35}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}
+%			\end{align*}}
+%			\vspace{0.5em}
 			\item Modification on photon-leg added to reduce fake photon rate by forcing the photon to be a FSR.
 		\end{itemize}		
 	\end{itemize}
 \end{frame}
 
-% Triggers (tau-like)
+% Triggers (figs-like)
 \begin{frame}{Triggers}
 	\begin{itemize}
 		\item \khl{HLT Efficiencies and Scale Factors}\\
@@ -507,6 +519,7 @@
 
 %%%%%% 4. Section: Simulated Samples %%%%%%
 \begin{frame}
+	\label{sec:simsam}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -525,32 +538,47 @@
 		Hadronization: \texttt{PYTHIA 8.212}
 		\item SM processes considered in background simulation are\\
 		\(\PGg\), \(\PW\to\Pl\PGn\), Drell-Yan \(\PZ\to\Pl\Pl\) with jets, \(\PQt\PAQt\), \(\PW\PGg\), and \(\PZ\PGg\).
-		\item Cross sections for Higgs production: \ktodo{double check}\\
-		\hspace{4em}
+		\item Cross sections for Higgs production:\\
+		\hspace{2em}
 		\begin{tabular}{l|l}
 			Process & \(\sigma\) (fb)\\
 			\hline
-			ggH & 48580 \\
-			VBF & 3782 \\
-			W\(_{\Pl\PGn}\)H & 471 \\
-			Z\(_{\Pl\Pl}\)H & 77
+			ggH & 48580\\
+			VBF & 3782\\
+			W\(_{\Pl\PGn}\)H & 471\\
+			Z\(_{\Pl\Pl}\)H & 77\\
+			ggZ\(_{\Pl\Pl}\)H & 12
 		\end{tabular}
 	\end{itemize}
 \end{frame}
 
 % Simulated Samples (polarization)
 \begin{frame}{Simulated Samples}
-	\begin{itemize}
-		\item \khl{Signal Simulation}\\
-		\vspace{0.5em}
-		\textbf{Polarization reweighting} of events.\\
-		Higgs is a scalar, and angular momentum conservation constrains the mesons to have transverse spin alignment in the \(\PH\to\PM\PGg\) process. \texttt{PYTHIA} simulates unpolarized decay products. Therefore, signal events are reweighted by \((3/2)\sin^2\theta\), where \(\theta\) is the angle between positive track in meson rest frame and meson flight direction in lab frame.
-	\end{itemize}
-	\ktodo{Which plot to include?}
+	\begin{columns}
+		\begin{column}[b]{0.5\textwidth}
+			\begin{itemize}
+				\item \khl{Signal Simulation}\\
+				\vspace{0.5em}
+				\textbf{Polarization reweighting} of events.\\
+				{\small
+					Higgs is a scalar, and angular momentum conservation constrains the mesons to have transverse spin alignment in the \(\PH\to\PM\PGg\) process. \texttt{PYTHIA} simulates unpolarized decay products. Therefore, signal events are reweighted by \((3/2)\sin^2\theta\), where \(\theta\) is the angle between positive track in meson rest frame and meson flight direction in lab frame.
+				}
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.85\textwidth]{figures/misc/polarization_angle_rho.pdf}
+				\vspace{-1em}
+				\caption{\(\cos\theta\) for the \(\rho\) meson decay. The black ﬂat distribution illustrates the polarization angle within the centrally produced MC signal. The blue distribution portrays a privately generated MC signal wherein the accurate polarization was already incorporated. The red distribution results from reweighting the black distribution using the reweighting technique outlined in this section.}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 %%%%%% 5. Section: Event Selection %%%%%%
 \begin{frame}
+	\label{sec:evsel}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -580,7 +608,7 @@
 		\end{table}
 		\begin{itemize}
 			\item \(\PGg\)-ID signal eff. = MVA-based selection ID \cite{photon_mvaid}
-			\item \(\ptg\) cut based on trigger
+			\item \(\ptg\) and \(|\eta^\PGg|\) cuts based on trigger thresholds and barrel vs. endcap considerations.
 			\item ggH/VBF: conversion veto, VH: pixel veto.
 			\item Highest-\(\ptg\) photon chosen as candidate.
 		\end{itemize}
@@ -610,7 +638,7 @@
 					\begin{itemize}
 						\item Di-track system invariant \textbf{mass windows and sidebands} (next slide).
 						\item \(K^\pm\pi^\mp\) system: if both combinations exist, then the one closest to \(m_{\PKstarz}\) is selected.
-						\item Reject events where \(\mkk\) consistent with \(m_\PGp\) and have higher \(\pt\), vice versa.
+						\item Reject events where \(\mkk\) consistent with \(m_{\PGp\PGp}/m_{\PK\PGp}\) and have higher \(\pt\), vice versa.
 				\end{itemize}}
 				\vfill
 			\end{column}
@@ -665,8 +693,8 @@
 			}
 		\end{subfigure}
 		\caption{Di-track mass distribution in selected events in data, for the ggH category of the analysis, \(\grho\) (left), \(\gphi\) (middle) and \(\gkstar\) (right) channels. Vertical dashed lines represent the signal mass region borders.}
-		\ktodo{Answer ARC MAR 05 question 2.}
-	\end{figure}
+		{\footnotesize For more information on meson mass resolution, see backup slide \ref{fr:mesmassres}.}
+	\end{figure} 
 \end{frame}
 
 % Event selection (di-track)
@@ -724,25 +752,9 @@
 	\end{itemize}
 \end{frame}
 
-% Event Selection (non-MVA summary)
-\begin{frame}{Event Selection}
-	
-	\khl{Summary of Event Selection}
-	\vspace{0.2em}
-	\begin{figure}
-		\centering
-		\kmtab{table1}{height=0.75\textheight}
-		\caption{Summary of the event selections, including both common and category-specific selections.}
-	\end{figure}
-\end{frame}
-
-% MC/data background
-\begin{frame}{MC/Data Background Comparison}
-	\ktodo{todo}
-\end{frame}
-
 %%%%%% 6. Section: MVA Selection %%%%%%
 \begin{frame}
+	\label{sec:mva}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -788,7 +800,7 @@
 				& \(p^{M}_T\) & \(p^{M}_T/m_{M\PGg}\) & \(p^{M}_T/m_{M\PGg}\) \\
 				& \(\eta_M\) & & \\
 				\hline
-				Meson Isolation & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) \\
+				Charged Isolation & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\PM)\) & \(I^{\mathrm{trk}}(\PM)\) \\
 				\hline
 				Photon ID & & \(\PGg\) mvaID & \(\PGg\) mvaID\\
 				\hline
@@ -811,7 +823,7 @@
 		\begin{itemize}
 			\item Training samples\\
 			\vspace{0.5em}
-			\hspace{2em}\textbf{Signal}: MC-generated\\
+			\hspace{2em}\textbf{Signal}: MC-generated.\\
 			\hspace{2em}\textbf{Background}: Data from meson mass sidebands.
 			\vspace{1em}\\
 			\item 4 input variables\\
@@ -840,7 +852,6 @@
 		\begin{itemize}
 			\item Training results:
 		\end{itemize}
-	\ktodo{possible to add cat0 and cat1 lines?}\\
 		\begin{figure}
 			\centering
 			\begin{subfigure}[t]{0.31\textwidth}
@@ -869,7 +880,7 @@
 		\begin{itemize}
 			\item Training samples\\
 			\vspace{0.5em}
-			\hspace{2em}\textbf{Signal}: MC-generated\\
+			\hspace{2em}\textbf{Signal}: MC-generated.\\
 			\hspace{2em}\textbf{Background}: \(\PGg\)+jets simulation and \(\PGg\) di-track events where the two tracks have the same charge.
 			\vspace{1em}\\
 			\item 8 input variables\\
@@ -881,7 +892,7 @@
 				\(p^{\PM\PGg}_T\) & Higgs candidate \(\pt\)\\
 				\(\ptg\) & photon \(\pt\)\\
 				\(\ptm/m_{\PM\PGg}\) & meson \(\pt\) divided by Higgs candidate mass\\
-				\(I^{\mathrm{trk}}(\mathrm{trk_1})\) & leading-track charged isolation\\
+				\(I^{\mathrm{trk}}(\PM)\) & meson charged isolation\\
 				\(\PGg\) mvaID & photon identification discriminator\\
 				\(M_{\jj}\) & di-jet invariant mass\\
 				\(\Delta\phi_{\jj}\) & \(\Delta\phi\) of the two jets\\
@@ -952,8 +963,21 @@
 	\end{itemize}
 \end{frame}
 
-%%%%%% 7. Section: Signal Modeling %%%%%%
+% Event Selection (total summary)
+\begin{frame}{Event Selection}
+	
+	\khl{Summary of Event Selection}
+	\vspace{0.2em}
+	\begin{figure}
+		\centering
+		\kmtab{table1}{height=0.75\textheight}
+		\caption{Summary of the event selections, including both common and category-specific selections.}
+	\end{figure}
+\end{frame}
+
+%%%%%% 7. Section: Modeling %%%%%%
 \begin{frame}
+	\label{sec:model}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -999,12 +1023,13 @@
 			\item VH category: \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 150\) GeV.
 		\end{itemize}
 		\item Degree of polynomial determined with \textbf{F-test}.
-		\item \textbf{Bias test}.
+		\item \textbf{Bias studies} performed.
 	\end{itemize}
 \end{frame}
 
 %%%%%% 8. Section: Systematic Uncertainties %%%%%%
 \begin{frame}
+	\label{sec:syst}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -1015,6 +1040,7 @@
 
 % Systematic uncertainties
 \begin{frame}{Systematic Uncertainties}
+	Signal uncertainty
 	\begin{table}
 		\small
 		\begin{tabular}{l|l}
@@ -1028,7 +1054,7 @@
 			\hline
 			\textbf{Photon ID efficiencies} & Up to 1.5\%, \(\pt\) and \(\eta\) dependent\\
 			\hline
-			\textbf{Tracking efficiency} & 4.6-4.8\% (2.3-2.6\% \ktodo{??} per track)\\
+			\textbf{Tracking efficiency} & 4.6\% (2.3\% per track)\\
 			\hline
 			\textbf{Muon/Electron ID} & Less than 1.0\% (muons) / 1.5\% (electrons)\\
 			\hline
@@ -1038,16 +1064,20 @@
 			\hline
 			\textbf{QCD renormalization and factorization} & 0.4\% (VBF), 0.7\% (WH), 3.8\% (ZH), and 2.6\% (\(\mathrm{t\bar{t}H}\))\\
 			\hline
-			\textbf{PDF \& \(\mathbf{\alpha_S}\)} & 1.6-3.2\%, depending on Higgs production\\
+			\textbf{PDF \& \(\alpha_S\)} & 1.6-3.2\%, depending on Higgs production\\
 			\hline
-			\textbf{Parton shower modeling} & \ktodo{what is the number?}\\
+			\textbf{Parton shower modeling} & \(\mathcal{O}(0.1\%)\)\\
 			\hline
 		\end{tabular}
+		\caption{Table of systematic uncertainties.}
 	\end{table}
+
+	Background shape uncertainty measured via \textbf{discrete profiling method}.
 \end{frame}
 
 %%%%%% 9. Section: Results %%%%%%
 \begin{frame}
+	\label{sec:res}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -1299,6 +1329,7 @@
 
 %%%%%% Section: Backup Slides %%%%%%
 \begin{frame}
+	\label{sec:backup}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
@@ -1331,7 +1362,48 @@
 	\end{itemize}
 \end{frame}
 
+% Isolation scale factors
+\begin{frame}{Di-track Isolation Scale Factors}
+	
+	{\footnotesize This slide was presented during the unblinding talk.}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.8\textheight]{figures/backup/isolation_scale_factors.png}
+	\end{figure}
+\end{frame}
+
+% Meson mass resolution
+\begin{frame}{Meson Mass Resolution}
+	\label{fr:mesmassres}
+	\begin{table}
+		\begin{tabular}{ l | c | c}
+			Meson & Resolution (MeV) & Width (MeV)\\
+			\hline
+			\(\PGrz\) & 90 & 147 \\
+			\(\PGf\) & 6.4 & 4.25 \\
+			\(\PKstarz\) & 42 & 41 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\begin{figure}
+		\begin{subfigure}{0.3\textwidth}
+			fig1
+		\end{subfigure}%
+		\begin{subfigure}{0.3\textwidth}
+			fig2
+		\end{subfigure}%
+		\begin{subfigure}{0.3\textwidth}
+			fig3
+		\end{subfigure}%
+		\caption{\ktodo{placeholder for figures}}
+	\end{figure}
+\end{frame}
+
+% Systematic impacts (AN-23-004)
+%%% Asymmetry problem
+
 \begin{frame}{References}
+	\label{fr:refs}
 	\scriptsize
 	\bibliographystyle{JHEP}
 	\bibliography{refs.bib}
