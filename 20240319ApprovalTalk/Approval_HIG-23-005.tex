@@ -14,6 +14,7 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{cite}
+\usepackage{tcolorbox}
 %\usepackage[style=ieee,maxbibnames=10,sorting=none,backend=biber]{biblatex}
 %\addbibresource{./refs.bib}
 
@@ -29,19 +30,24 @@
 \newcommand{\Pgp}{\ensuremath{\pi}}
 \newcommand{\PM}{\ensuremath{\mathrm{M}}}
 \newcommand{\pt}{\ensuremath{p_T}}
+\newcommand{\ptg}{\ensuremath{p_T^\PGg}}
+\newcommand{\ptm}{\ensuremath{p_T^\PM}}
+\newcommand{\jj}{\ensuremath{\mathrm{jj}}}
+\newcommand{\jone}{\ensuremath{\mathrm{j1}}}
+\newcommand{\jtwo}{\ensuremath{\mathrm{j2}}}
 \newcommand{\Irelm}{\ensuremath{I_{\text{rel}}^{\Pgm}}}
 \newcommand{\Itrk}{\ensuremath{I^{\text{trk}}(M)}}
 \newcommand{\Ineu}{\ensuremath{I^{\text{neu}}(M)}}
 \newcommand{\ItrkK}{\ensuremath{I^{\text{trk}}(\mathrm{trk}_1)}}
-\newcommand{\mllhad}{\ensuremath{m_{\mathrm{M}\gamma}}}
+\newcommand{\mllhad}{\ensuremath{m_{\mathrm{M}\PGg}}}
 \newcommand{\PGrz}{\ensuremath{\PGr^0}}
 \newcommand{\PKstarz}{\ensuremath{\PKst^{0}}}
-\newcommand{\Hgrho}{\PH\to\PGrz\gamma}
-\newcommand{\Hgphi}{\PH\to\PGf\gamma}
-\newcommand{\Hgkstar}{\PH\to\PKstarz\gamma}
-\newcommand{\gphi}{\PGf\gamma}
-\newcommand{\grho}{\PGrz\gamma}
-\newcommand{\gkstar}{\PKstarz\gamma}
+\newcommand{\Hgrho}{\PH\to\PGrz\PGg}
+\newcommand{\Hgphi}{\PH\to\PGf\PGg}
+\newcommand{\Hgkstar}{\PH\to\PKstarz\PGg}
+\newcommand{\gphi}{\PGf\PGg}
+\newcommand{\grho}{\PGrz\PGg}
+\newcommand{\gkstar}{\PKstarz\PGg}
 \newcommand{\ztoll}{\PZ\to\ell\ell}
 \newcommand{\htomg}{\PH\to\PM\PGg}
 \newcommand{\ggH}{\Pg\Pg\PH}
@@ -78,6 +84,32 @@
 \newcommand{\khl}[1]{\textbf{\color{structure}#1}}
 \newcommand{\ktodo}[1]{\colorbox{yellow!30}{{\color{red}\textsuperscript{\tiny FIX! }}#1}}
 \newcommand{\kmfig}[2]{\includegraphics[#2]{figures/23-005-v07-marked-figs/#1.pdf}}
+\newcommand{\kmtab}[2]{\includegraphics[#2]{tables/23-005-v07-marked-tables/#1.pdf}}
+\newcommand{\kblock}[2]{
+	\begin{tcolorbox}[colback=Thistle!5,colframe=BlueViolet,arc=0.5pt,outer arc=0.5pt,left=2pt,right=2pt,title=#1]
+		#2
+	\end{tcolorbox}
+}
+\newcommand{\kaltblock}[2]{
+	\begin{tcolorbox}[colback=Thistle!5,colframe=Apricot!90!Melon,arc=0.5pt,outer arc=0.5pt,left=2pt,right=2pt,title=#1]
+		#2
+	\end{tcolorbox}
+}
+\newcommand{\krblock}[2]{
+	\begin{tcolorbox}[colback=Thistle!5,colframe=Bittersweet,arc=0.5pt,outer arc=0.5pt,left=2pt,right=2pt,title=#1]
+		#2
+	\end{tcolorbox}
+}
+\newcommand{\kgblock}[2]{
+	\begin{tcolorbox}[colback=Thistle!5,colframe=ForestGreen,arc=0.5pt,outer arc=0.5pt,left=2pt,right=2pt,title=#1]
+		#2
+	\end{tcolorbox}
+}
+\newcommand{\kbblock}[2]{
+	\begin{tcolorbox}[colback=Thistle!5,colframe=RoyalBlue,arc=0.5pt,outer arc=0.5pt,left=2pt,right=2pt,title=#1]
+		#2
+	\end{tcolorbox}
+}
 
 %%%
 \usetheme{CambridgeUS}
@@ -92,6 +124,7 @@
 \setbeamercolor{insertsectionhead}{fg=black}
 \setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{bibliography item}{\insertbiblabel}
+
 \setbeamertemplate{footline}
 {
 	\leavevmode%
@@ -178,7 +211,7 @@
 		\item Suppressed couplings and large QCD background hamper direct searches.
 		\item Class of decays suggested \(\htomg\), where \(\PM\) is a light-quark meson.
 		\item \textit{In this analysis}, \(\PM=\PGf, \PGrz, \PKstarz\) are considered.
-%		\item SM prediction of branching ratios of \(H\rightarrow \phi\gamma\) or \(\rho\gamma\) within reasonable reach (??)
+%		\item SM prediction of branching ratios of \(H\rightarrow \phi\PGg\) or \(\rho\PGg\) within reasonable reach (??)
 %		\item ATLAS upper limit at \(95\)\% CL is \(\mathcal{O}(10^{-4})\) to \(\mathcal{O}(10^{-3})\).
 %		\item \(K^*_0\) channel added as an extension of ditrack + gamma final state analyses.
 	\end{itemize}
@@ -214,7 +247,7 @@
 	\khl{\(\htomg\)}
 	\begin{itemize}
 		\item \textbf{Direct contribution}. The Higgs couples via Yukawa coupling to the quarks, one of which radiates a photon.
-		\item \textbf{Indirect contribution}. The off-shell \(\gamma^*\) or \(Z^*\) produced in \(H\rightarrow \gamma\gamma^*, \gamma Z^*\) \textit{fragments} into a meson.
+		\item \textbf{Indirect contribution}. The off-shell \(\PGg^*\) or \(Z^*\) produced in \(H\rightarrow \PGg\PGg^*, \PGg Z^*\) \textit{fragments} into a meson.
 	\end{itemize}
 	Direct and indirect contributions interfere destructively. Due to light quark masses, direct contribution is smaller than indirect. \textit{Direct contribution is sensitive to deviation from SM.} Branching ratios are \textit{typically} \(\mathcal{O}(10^{-5}\textup{--}10^{-6})\).
 	\begin{figure}[t!]
@@ -230,7 +263,7 @@
 			\includegraphics[height=1.2in]{figures/misc/Higgs_phirhoomega_indirect.png}
 			\caption{Indirect contribution via a virtual photon or \(Z\) boson.}
 		\end{subfigure}
-		\caption{Leading order Feynman diagrams to the \(H\rightarrow M\gamma\) processes. Image taken from Fig. 2 of \cite{K_nig_2015}.}
+		\caption{Leading order Feynman diagrams to the \(H\rightarrow M\PGg\) processes. Image taken from Fig. 2 of \cite{K_nig_2015}.}
 	\end{figure}
 \end{frame}
 
@@ -259,30 +292,53 @@
 	\end{columns}
 \end{frame}
 
-%%%%%% 2. Section: Introduction %%%%%%
+%%%%%% 2. Section: Analysis Strategy %%%%%%
 \begin{frame}
 	\vfill
 	\centering
 	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
-		\usebeamerfont{title}\Huge Introduction \par%
+		\usebeamerfont{title}\Huge Analysis Strategy \par%
 	\end{beamercolorbox}
 	\vfill
 \end{frame}
 
 % Strategy (final states)
-\begin{frame}{Strategy}
+\begin{frame}{Analysis Strategy}
 	\begin{itemize}
 		\item \khl{Final states}
 		\begin{enumerate}
-			\item High energy \textbf{photon}
-			\item High energy \textbf{ditrack} from meson
-			\item \ktodo{Look for photon-meson inv. mass}
+			\item High energy \textbf{photon}.
+			\item High energy \textbf{di-track} from meson.
+			\vspace{1em}
+			\begin{figure}
+				\centering
+				\begin{subfigure}[b]{0.26\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{feynman-diagrams/rho_ditrack.pdf}
+					\caption*{\footnotesize \(\mathcal{BR}(\PGrz\to\PGp^+\PGp^-) \sim= 100\%\)}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[b]{0.26\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{feynman-diagrams/phi_ditrack.pdf}
+					\caption*{\footnotesize \(\mathcal{BR}(\PGf\to\PK^+\PK^-) \sim 49\%\)}
+				\end{subfigure}
+				\hfill
+				\begin{subfigure}[b]{0.26\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{feynman-diagrams/kstar0_ditrack.pdf}
+					\caption*{\footnotesize \(\mathcal{BR}(\PKstarz\to\PK^\pm\PGp^\mp) \sim 100\%\)}
+				\end{subfigure}
+				\hfill
+				\caption{Di-track systems for the different mesons considered in this analysis.}
+			\end{figure}
+			\item Signal events extracted from \textbf{photon \& di-track invariant mass spectrum}.
 		\end{enumerate}
 	\end{itemize}
 \end{frame}
 
 % Strategy (production)
-\begin{frame}{Strategy}
+\begin{frame}{Analysis Strategy}
 	\begin{itemize}
 		\item \khl{Higgs Production Categories}
 		\vspace{1em}
@@ -293,33 +349,33 @@
 				\includegraphics[height=0.25\textheight]{feynman-diagrams/ggH.pdf}\\
 				\textbf{ggH}
 				\begin{itemize}
-					\item No \(e/\mu\)
-					\item Veto events with \(|\Delta\eta_{JJ}| > 3\)
+					\item No \(\Pe/\PGm\).
+%					\item Veto events with \(|\Delta\eta_{\jj}| > 3\)
 				\end{itemize}
 			\end{column}
 			\begin{column}{0.31\textwidth}
 				\centering
 				\includegraphics[height=0.25\textheight]{feynman-diagrams/VBF.pdf}\\
-				\textbf{VBF high \(p_T^\gamma\)}
+				\textbf{High-\(\ptg\) VBF}
 				\begin{itemize}
-					\item Barrel photon \(p_T^\gamma > 75\) GeV
-					\item No \(e/\mu\)
-					\item \(|\Delta\eta_{JJ}| > 3\), \(M_{JJ} > 400\) GeV
+					\item \(\ptg > 75\) GeV.
+					\item No \(\Pe/\PGm\)
+%					\item \(|\Delta\eta_{\jj}| > 3\), \(M_{JJ} > 400\) GeV
 				\end{itemize}
 				\vspace{1em}
-				\textbf{VBF low \(p_T^\gamma\)}
+				\textbf{Low-\(\ptg\) VBF}
 				\begin{itemize}
-					\item \(40 < p_T^\gamma < 75\) GeV
-					\item No \(e/\mu\)
-					\item \(|\Delta\eta_{JJ}| > 3\), \(M_{JJ} > 300\) GeV
+					\item \(40 < \ptg < 75\) GeV.
+					\item No \(\Pe/\PGm\)
+%					\item \(|\Delta\eta_{\jj}| > 3\), \(M_{JJ} > 300\) GeV
 				\end{itemize}
 			\end{column}
 			\begin{column}{0.31\textwidth}
 				\centering
 				\includegraphics[height=0.25\textheight]{feynman-diagrams/VH.pdf}\\
-				\textbf{VH (\(\mathbf{Z_{ll}H},\mathbf{W_{l\nu}H}\))}
+				\textbf{VH (\(\mathbf{\PZ_{\Pl\Pl}\PH},\mathbf{\PW_{\Pl\PGn}\PH}\))}
 				\begin{itemize}
-					\item At least one \(l, \nu\)
+					\item At least one \(\Pe/\PGm\).
 					\item Also included is \(\mathbf{t\bar{t}H}\), accounting for \(\sim30\%\).
 				\end{itemize}
 			\end{column}
@@ -327,23 +383,76 @@
 	\end{itemize}
 \end{frame}
 
+%%%%%% 3. Section: Triggers %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Triggers \par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+
 % Triggers
 \begin{frame}{Triggers}
 	\begin{itemize}
-		\item {\color{red}What to discuss?}
-		\item \ktodo{Trigger efficiency --- how to measure (slide with plots)}
-		\begin{itemize}
-			\item \(Z\rightarrow \mu^+\mu^-\) events data/MC
-			\item Measure photon leg \& tau leg
-			\item Figs. 30 \& 38
-		\end{itemize}
+		\item \khl{High Level Triggers (HLT)}\\
+		Three types of triggers are employed.
+		\vspace{-1em}
+	\end{itemize}
+	\begin{columns}
+		\begin{column}[t]{0.33\linewidth}
+			\krblock{Tau-like trigger}{
+				\textbf{Photon + jets with \(\PGt\)-ID}\\
+				\hspace{2em}\textrightarrow\hspace{0.5em}\textbf{\color{Bittersweet}ggH, low-\(\ptg\) VBF}
+				\begin{itemize}
+					\item Photon \(\ptg>35\) GeV + tau-like jet \(\pt^\mathrm{j}>35\) GeV.
+					\item Tau-leg similar to isolated di-track system.
+					\item Active during 2018.
+%					\item Trigger efficiencies derived from \(\PZ\to\PGmm\PGmp\).
+				\end{itemize}
+			}
+			\vfill
+		\end{column}%
+		\hfill
+		\begin{column}[t]{0.33\linewidth}
+			\kgblock{VBF-dedicated trigger}{
+				\textbf{High-\(\ptg\) photon + VBF-like jets}\\
+				\hspace{2em}\textrightarrow\hspace{0.5em}\textbf{\color{ForestGreen}high-\(\ptg\) VBF}
+				\begin{itemize}
+					\item Photon \(\ptg>35\) GeV + di-jet with large \(M_{\jj}\) and \(\Delta\eta_\jj\).
+					\item Active partly during 2016-17 and fully during 2018.
+				\end{itemize}
+			}
+			\vfill
+		\end{column}%
+		\hfill
+		\begin{column}[t]{0.33\linewidth}
+			\kbblock{Leptonic trigger}{
+				\textbf{Double or single lepton}\\
+				\hspace{2em}\textrightarrow\hspace{0.5em}\textbf{\color{RoyalBlue}VH}
+				\begin{itemize}
+					\item Single or double-muon (electron) lowest \(\pt\) thresholds vary depending on year.
+					\item To complement selection, triggers requiring a lepton and a photon is also used.
+				\end{itemize}
+			}
+			\vfill
+		\end{column}
+	\end{columns}
+\end{frame}
+
+% Triggers (summary)
+\begin{frame}{Triggers}
+	\begin{itemize}
+		\item \khl{High Level Triggers (HLT)}
+		\vspace{1em}
 	\end{itemize}
 	\begin{table}
 		\centering
 		\small
 		\begin{tabular}{|l|c|c|c|c|}
 			\hline
-			& \textbf{ggH} & \textbf{High-\(\mathbf{p^\gamma_T}\) VBF} & \textbf{Low-\(\mathbf{p^\gamma_T}\) VBF} & \textbf{VH} \\
+			& \textbf{ggH} & \textbf{High-\(\mathbf{\ptg}\) VBF} & \textbf{Low-\(\mathbf{\ptg}\) VBF} & \textbf{VH} \\
 			\hline
 			& & & & single/di-muon\\
 			Triggers & tau-like & VBF-like & tau-like & single/di-electron\\
@@ -352,19 +461,138 @@
 			& & 28.2 (2016) & & \\
 			Luminosity (\(\mathrm{fb^{-1}}\)) & 39.50 (2018) & 7.7 (2017) & 39.50 (2018) & 138 (2016--2018) \\
 			& & 60 (2018) & & \\
-			\hline	
+			\hline
 		\end{tabular}
 	\end{table}
 \end{frame}
 
-% Simulated Samples
+% Triggers (efficiency)
+\begin{frame}{Triggers}
+	\begin{itemize}
+		\item \khl{HLT Efficiencies and Scale Factors}\\
+		Trigger efficiency \textbf{scale factor} defined as the ratio of data vs. MC efficiency.
+		\begin{equation*}
+			\text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}}
+		\end{equation*}
+	\end{itemize}
+\end{frame}
+
+% Triggers (equations)
+\begin{frame}{Triggers}
+	\begin{itemize}
+		\item \khl{HLT Efficiencies and Scale Factors}\\
+		For the tau-like trigger, Data = Single Muon, MC = Drell-Yan. Photon-leg and tau-leg efficiencies measured separately, where\\
+		\ktodo{do I need these equations?}
+		\begin{align*}
+			\epsilon^{\mathrm{HLT}}_\PGg &= \frac{\text{HLT\_Mu17\_Photon30}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}\\
+			\\
+			\epsilon^{\mathrm{HLT}}_\mathrm{TwoProngs} &= \frac{\text{HLT\_IsoMu24\_TwoProngs35}\wedge\text{offline selection}\wedge\text{HLT\_IsoMu24}}{\text{offline selection}\wedge\text{HLT\_IsoMu24}}
+		\end{align*}
+	\end{itemize}
+\end{frame}
+
+% Triggers (tau-like)
+\begin{frame}{Triggers}
+	\begin{itemize}
+		\item \khl{HLT Efficiencies and Scale Factors}\\
+		Tau-like trigger efficiencies MC (blue) vs. Data (black).\\
+		\vspace{0.5em}	
+		\begin{figure}
+			\centering
+			\begin{subfigure}{0.45\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/tau_trigger_photon_efficiencies.pdf}
+				\vspace{-2em}
+				\caption{Tau-like trigger photon-leg efficiencies for MC and data.}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}{0.45\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/tau_trigger_two_prong_efficiencies.pdf}
+				\vspace{-2em}
+				\caption{Tau-like trigger tau-leg efficiencies for MC and data.}
+			\end{subfigure}
+			\vspace{-1em}
+		\caption{Photon-leg and tau-leg efficiencies of the tau-like trigger.}
+		\end{figure}
+	\end{itemize}
+\end{frame}
+
+% Triggers (vbf)
+\begin{frame}{Triggers}
+	\begin{itemize}
+		\item \khl{HLT Efficiencies and Scale Factors}\\
+		VBF-dedicated trigger efficiencies MC (red) vs. Data (blue).\\
+		\vspace{1em}	
+		\begin{figure}
+			\centering
+			\begin{subfigure}[t]{0.31\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat12016_WP90_barrel.png}
+				\caption{VBF trigger photon-leg efficiencies for MC and data.}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat2017_WP90_barrel.png}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\linewidth}
+				\includegraphics[width=\textwidth]{figures/misc/PhotonFromData_RhoCat2018_WP90_barrel.png}
+			\end{subfigure}
+			\caption{VBF-dedicated trigger photon-leg efficiencies for MC and data, shown for the \(\Hgrho\) channel in 2016 (top-left), 2017 (top-right), and 2018 (bottom).}
+		\end{figure}
+	\end{itemize}
+\end{frame}
+
+%%%%%% 4. Section: Simulated Samples %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Simulated Samples \par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+
+% Simulated Samples (MC)
 \begin{frame}{Simulated Samples}
-	\begin{align*}
-		\phi(1020)&\rightarrow K^+K^-\;\;(\mathrm{BR} \sim 49\%)\\
-		\rho(770)&\rightarrow \pi^+\pi^-\;\;(\mathrm{BR} \sim 100\%)\\
-		K^*_0(892)&\rightarrow K^\pm\pi^\mp\;\;(\mathrm{BR} \sim 100\%)
-	\end{align*}
-	\ktodo{Polarization reweighting (new slide if plot)}
+	\begin{itemize}
+		\item \khl{MC Generation}\\
+		\vspace{0.5em}
+		Gen-level: \texttt{POWHEG} (NLO) or \texttt{MADGRAPH5\_aMC@NLC} (LO)\\
+		PDFs: \texttt{NNPDF3.1} (NNLO)\\
+		Hadronization: \texttt{PYTHIA 8.212}
+		\item SM processes considered in background simulation are\\
+		\(\PGg\), \(\PW\to\Pl\PGn\), Drell-Yan \(\PZ\to\Pl\Pl\) with jets, \(\PQt\PAQt\), \(\PW\PGg\), and \(\PZ\PGg\).
+		\item Cross sections for Higgs production: \ktodo{double check}\\
+		\hspace{4em}
+		\begin{tabular}{l|l}
+			Process & \(\sigma\) (fb)\\
+			\hline
+			ggH & 48580 \\
+			VBF & 3782 \\
+			W\(_{\Pl\PGn}\)H & 471 \\
+			Z\(_{\Pl\Pl}\)H & 77
+		\end{tabular}
+	\end{itemize}
+\end{frame}
+
+% Simulated Samples (polarization)
+\begin{frame}{Simulated Samples}
+	\begin{itemize}
+		\item \khl{Signal Simulation}\\
+		\vspace{0.5em}
+		\textbf{Polarization reweighting} of events.\\
+		Higgs is a scalar, and angular momentum conservation constrains the mesons to have transverse spin alignment in the \(\PH\to\PM\PGg\) process. \texttt{PYTHIA} simulates unpolarized decay products. Therefore, signal events are reweighted by \((3/2)\sin^2\theta\), where \(\theta\) is the angle between positive track in meson rest frame and meson flight direction in lab frame.
+	\end{itemize}
+	\ktodo{Which plot to include?}
+\end{frame}
+
+%%%%%% 5. Section: Event Selection %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Event Selection \par%
+	\end{beamercolorbox}
+	\vfill
 \end{frame}
 
 % Event Selection (photon selection)
@@ -377,87 +605,128 @@
 			\small
 			\begin{tabular}{|l|c|c|c|c|}
 				\hline
-				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{p^\gamma_T}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{p^\gamma_T}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
+				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{\ptg}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{\ptg}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
 				\hline
-				\(p^\gamma_T\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 75\)} & \multicolumn{1}{C{8em}}{\(38 < p^\gamma_T < 75\)} & \multicolumn{1}{C{8em}|}{\(> 40\)}\\
-				\(|\eta^\gamma|\) & \multicolumn{1}{C{8em}}{\(< 2.1\)} & \multicolumn{1}{C{8em}}{\(< 1.4\)} & \multicolumn{1}{C{8em}}{\(< 2.1\)} & \multicolumn{1}{C{8em}|}{\(< 2.5\)}\\
-				\(\gamma\)-ID signal eff. & \multicolumn{1}{C{8em}}{\(80\%\)} & \multicolumn{1}{C{8em}}{\(90\%\)} & \multicolumn{1}{C{8em}}{\(80\%\)} & \multicolumn{1}{C{8em}|}{\(90\%\)}\\
+				\(\ptg\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 75\)} & \multicolumn{1}{C{8em}}{\(38 < \ptg < 75\)} & \multicolumn{1}{C{8em}|}{\(> 40\)}\\
+				\(|\eta^\PGg|\) & \multicolumn{1}{C{8em}}{\(< 2.1\)} & \multicolumn{1}{C{8em}}{\(< 1.4\)} & \multicolumn{1}{C{8em}}{\(< 2.1\)} & \multicolumn{1}{C{8em}|}{\(< 2.5\)}\\
+				\(\PGg\)-ID signal eff. & \multicolumn{1}{C{8em}}{\(80\%\)} & \multicolumn{1}{C{8em}}{\(90\%\)} & \multicolumn{1}{C{8em}}{\(80\%\)} & \multicolumn{1}{C{8em}|}{\(90\%\)}\\
 				\hline
 			\end{tabular}
 			\caption{Photon selection criteria across different production categories.}
 		\end{table}
 		\begin{itemize}
-			\item \(\gamma\)-ID signal eff. = MVA-based selection ID \cite{photon_mvaid}
-			\item \(p^\gamma_T\) cut based on trigger
-			\item {\color{red}Where is the information about di-photon veto for ggH?} \ktodo{ggH \& VH}.
+			\item \(\PGg\)-ID signal eff. = MVA-based selection ID \cite{photon_mvaid}
+			\item \(\ptg\) cut based on trigger
+			\item \ktodo{ggH \& VH---\textbf{BUT PAPER IS NOT FIXED!}}.
 			\item ggH/VBF: conversion veto, VH: pixel veto.
-			\item Highest-\(p^\gamma_T\) photon chosen as candidate.
+			\item Highest-\(\ptg\) photon chosen as candidate.
 		\end{itemize}
 	\end{itemize}
 \end{frame}
 
 % Event Selection (di-track)
 \begin{frame}{Event Selection}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item \khl{Ditrack reconstruction}\\
-				\begin{itemize}
-					\item Track selection
-					\begin{enumerate}
-						\item Originate from PV
-						\item Pass ``high purity" criteria
-					\end{enumerate}
-					\item Meson definition (\(M=\phi, \rho^0, K^*_0\))
-					\begin{enumerate}
-						\item Pair of oppositely charged tracks
-						\item \(p_T > 5\) GeV, \(|\eta| < 2.5\)
-						\item At least one track \(p_T > 20\) GeV
-					\end{enumerate}
-					\item Invariant mass
-					\begin{enumerate}
-						\item \(\rho^0: 0.62 < m_{\pi\pi} < 0.92\) GeV\\
-						\(\phi: 1.008 < m_{KK} < 1.032\) GeV\\
-						\(K^*_0: 0.84 < m_{K\pi} < 0.94\) GeV
-						\item \(m_{K\pi}\) closest to \(m_{K^*_0}\) selected
-						\item Reject events where \(m_{KK}\) consistent with \(m_{\phi}\) and have higher \(p_T\), vice versa.
-					\end{enumerate}
-				\end{itemize}
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.35\textwidth}
-		\end{column}
-	\end{columns}
+	\begin{itemize}
+		\item \khl{Di-track system reconstruction}
+		\begin{columns}
+			\begin{column}{0.4\linewidth}
+				\kblock{Track selection}{
+					\begin{itemize}
+						\item Originate from PV.
+						\item Pass ``high purity" criteria.
+					\end{itemize}}
+				\kblock{Meson definition}{
+					\begin{itemize}
+						\item Pair of oppositely charged tracks.
+						\item \(\pt > 5\) GeV, \(|\eta| < 2.5\).
+						\item At least one track \(\pt > 20\) GeV.
+				\end{itemize}}
+			\end{column}
+			\begin{column}{0.4\linewidth}
+				\kblock{Invariant mass}{
+					\begin{itemize}
+						\item Di-track system invariant \textbf{mass windows and sidebands} (next slide).
+						\item \(K^\pm\pi^\mp\) system: if both combinations exist, then the one closest to \(m_{\PKstarz}\) is selected.
+						\item Reject events where \(\mkk\) consistent with \(m_\PGp\) and have higher \(\pt\), vice versa.
+				\end{itemize}}
+				\vfill
+			\end{column}
+		\end{columns}
+	\end{itemize}
 	\vspace{1em}
 	\begin{center}
 		\khl{Applies to all production categories.}
 	\end{center}
 \end{frame}
 
-\begin{frame}{Event Selection}
-	\ktodo{mass sidebands}
-\end{frame}
-
-% Event selection (di-track system)
+% Event Selection (di-track mass windows & sidebands)
 \begin{frame}{Event Selection}
 	\begin{itemize}
-		\item \khl{Di-track system}\\
+		\item \khl{Di-track system reconstruction}\\
+		\vspace{1em}
+		Mass windows applied to invariant mass of di-track system.
+	\end{itemize}
+	\vspace{1em}
+	\begin{figure}[!h]
+		\centering
+		\begin{subfigure}[t]{0.31\linewidth}
+			\kmfig{fig2-top-left}{width=\textwidth}
+			{\footnotesize
+				\begin{align*}
+					\PGrz\text{ mass window: }& 0.62<\mpipi<0.92 \text{ GeV}\\
+					\text{Sidebands: }& 0.50<\mpipi<0.62 \text{ GeV} \\
+					& 0.92<\mpipi<1.00 \text{ GeV}
+				\end{align*}
+			}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\linewidth}
+			\kmfig{fig2-top-right}{width=\textwidth}
+			{\footnotesize
+				\begin{align*}
+					\PGf\text{ mass window: }& 1.008<\mkk<1.032 \text{ GeV}\\
+					\text{Sidebands: }& 1.000<\mkk<1.008 \text{ GeV} \\
+					& 1.032<\mkk<1.050 \text{ GeV}
+				\end{align*}
+			}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}[t]{0.31\linewidth}
+			\kmfig{fig2-bottom}{width=\textwidth}
+			{\footnotesize
+				\begin{align*}
+					\PKstarz\text{ mass window: }& 0.84 < \mkpi < 0.94 \text{ GeV}\\
+					\text{Sidebands: }& 0.80<\mkpi<0.84 \text{ GeV} \\
+					& 0.94<\mkpi<1.00 \text{ GeV}
+				\end{align*}
+			}
+		\end{subfigure}
+		\caption{Di-track mass distribution in selected events in data, for the ggH category of the analysis, \(\grho\) (left), \(\gphi\) (middle) and \(\gkstar\) (right) channels. Vertical dashed lines represent the signal mass region borders.}
+		\ktodo{Answer ARC MAR 05 question 2.}
+	\end{figure}
+\end{frame}
+
+% Event selection (di-track)
+\begin{frame}{Event Selection}
+	\begin{itemize}
+		\item \khl{Di-track system selection}\\
+		\vspace{1em}
 		Define the relative \textbf{charged isolation} of the leading meson candidate,
 		\begin{align*}
-			I^{\mathrm{trk}}(M) = \frac{p_T^{M}}{p_T^{M} + {\color{Plum}\sum_{trk}|p_T^{trk}|}}\,,
+			I^{\mathrm{trk}}(M) = \frac{\ptm}{\ptm + {\color{Plum}\sum_{\mathrm{trk}}|\pt^{\mathrm{trk}}|}}\,,
 		\end{align*}
 		and the \textbf{neutral isolation} as
 		\begin{align*}
-			I^{\mathrm{neu}}(M) = \frac{p_T^{M}}{p_T^{M} + {\color{Plum}\sum_{neu}|p_T^{neu}|}}\,.
+			I^{\mathrm{neu}}(M) = \frac{\ptm}{\ptm + {\color{Plum}\sum_{\mathrm{neu}}|\pt^{\mathrm{neu}}|}}\,.
 		\end{align*}
-		\({\color{Plum}\sum_{trk/neu}|p_T^{trk/neu}|}\) {: \color{Plum}sum of charged/neutral track \(p_T\) within \(\Delta R = 0.3\)} of meson candidate.
+		\({\color{Plum}\sum_{trk/neu}|\pt^{trk/neu}|}\) {: \color{Plum}sum of charged/neutral track \(\pt\) within \(\Delta R = 0.3\)} of meson candidate.
 		\vspace{1em}
 		\begin{table}[!ht]
 			\centering
 			\small
 			\begin{tabular}{|l|c|c|c|c|}
 				\hline
-				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{p^\gamma_T}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{p^\gamma_T}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
+				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{\ptg}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{\ptg}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
 				\hline
 				\(p^M_T\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 40\)} & \multicolumn{1}{C{8em}}{\(> 40\)} & \multicolumn{1}{C{8em}|}{\(> 40\)}\\
 				\(I^{trk}_M\) & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}|}{\(> 0.8\)}\\
@@ -466,9 +735,9 @@
 			\end{tabular}
 			\caption{Di-track system criteria across different production categories.}
 		\end{table}
-		\begin{itemize}
-			\item Highest-\(p_T\) meson chosen as candidate.
-		\end{itemize}
+%		\begin{itemize}
+%			\item Highest-\(\pt\) meson chosen as candidate.
+%		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -482,16 +751,13 @@
 			\small
 			\begin{tabular}{|l|c|c|c|c|}
 				\hline
-				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{p^\gamma_T}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{p^\gamma_T}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
+				& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{\ptg}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{\ptg}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
 				\hline
-				Event tagging & \multicolumn{1}{C{8em}}{Meson candidate within a jet with \(p_T^\mathrm{j} > 40\) GeV, tracks with \(\Delta R < 0.07\)} & \multicolumn{1}{C{8em}}{2 jets with \(p_T^{j} > 40\) GeV, \(m_{jj} > 400\) GeV, \(\eta_{jj} > 3\)} & \multicolumn{1}{C{8em}}{2 jets with \(p_T^{j} > 30, 20\) GeV, \(m_{jj} > 300\) GeV, \(\eta_{jj} > 3\)} & \multicolumn{1}{C{8em}|}{1 selected and isolated \(e/\mu\) or 2 selected \(e/\mu\) compatible with \(m_Z\)}\\
+				Event tagging & \multicolumn{1}{C{8em}}{Meson candidate within a jet with \(\pt^\mathrm{j} > 40\) GeV, tracks with \(\Delta R < 0.07\)} & \multicolumn{1}{C{8em}}{2 jets with \(\pt^{j} > 40\) GeV, \(m_{jj} > 400\) GeV, \(\eta_{jj} > 3\)} & \multicolumn{1}{C{8em}}{2 jets with \(\pt^{j} > 30, 20\) GeV, \(m_{jj} > 300\) GeV, \(\eta_{jj} > 3\)} & \multicolumn{1}{C{8em}|}{1 selected and isolated \(e/\mu\) or 2 selected \(e/\mu\) compatible with \(m_Z\)}\\
 				\hline
 			\end{tabular}
 			\caption{Event tagging selection criteria across different production categories.}
 		\end{table}
-		\begin{itemize}
-			\item 
-		\end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -500,37 +766,11 @@
 	
 	\khl{Summary of Event Selection}
 	\vspace{0.2em}
-	\ktodo{Take the version of the paper}
-	\begin{table}[!ht]
+	\begin{figure}
 		\centering
-		\footnotesize
-		\begin{tabular}{|l|c|c|c|c|}
-			\hhline{|=====|}
-			& \multicolumn{4}{c|}{\textbf{Common selections}}\\
-			\hhline{|=====|}
-			& \multicolumn{4}{C{36em}|}{``high-purity" tracks, opposite sign} \\
-			M selection & \multicolumn{4}{C{36em}|}{\(|\eta^{\mathrm{trk}}| < 2.5\),  \(p_T^{\mathrm{trk1}} > 20\) GeV,   \(p_T^{\mathrm{trk1}} > 5\) GeV,  \(|\eta^M| < 2.1\)} \\
-			& \multicolumn{4}{C{36em}|}{\(0.62 < m_{\pi\pi} < 0.92\) GeV,  \(1.008 < m_{KK} < 1.032\) GeV,  \(0.84 < m_{K\pi} < 0.94\) GeV} \\
-			\hhline{|=====|}
-			% categories
-			& \multicolumn{1}{C{8em}}{\textbf{ggH}} & \multicolumn{1}{C{8em}}{\textbf{High-\(\mathbf{p^\gamma_T}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{p^\gamma_T}\) VBF}} &  \multicolumn{1}{C{8em}|}{\textbf{VH}} \\
-			\hline
-			% Photon
-			\(p^\gamma_T\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 75\)} & \multicolumn{1}{C{8em}}{\(40 < p^\gamma_T < 75\)} & \multicolumn{1}{C{8em}|}{\(> 40\)}\\
-			\(|\eta^\gamma|\) & \multicolumn{1}{C{8em}}{\(< 2.1\)} & \multicolumn{1}{C{8em}}{\(< 1.4\)} & \multicolumn{1}{C{8em}}{\(< 2.1\)} & \multicolumn{1}{C{8em}|}{\(< 2.5\)}\\
-			\(\gamma\)-ID signal eff. & \multicolumn{1}{C{8em}}{\(80\%\)} & \multicolumn{1}{C{8em}}{\(90\%\)} & \multicolumn{1}{C{8em}}{\(80\%\) (endcap), \(90\%\) (barrel)} & \multicolumn{1}{C{8em}|}{\(90\%\)}\\
-			\hline
-			% Di-track
-			\(p^M_T\) [GeV] & \multicolumn{1}{C{8em}}{\(> 38\)} & \multicolumn{1}{C{8em}}{\(> 40\)} & \multicolumn{1}{C{8em}}{\(> 40\)} & \multicolumn{1}{C{8em}|}{\(> 40\)}\\
-			\(I^{trk}_M\) & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}}{\(> 0.9\)} & \multicolumn{1}{C{8em}|}{\(> 0.8\)}\\
-			\(I^{neu}_M\) & \multicolumn{1}{C{8em}}{\(> 0.8\)} & \multicolumn{1}{C{8em}}{-} & \multicolumn{1}{C{8em}}{-} & \multicolumn{1}{C{8em}|}{-}\\
-			\hline
-			% Event tagging
-			Event tagging & \multicolumn{1}{C{8em}}{Meson candidate within a jet with \(p_T^\mathrm{j} > 40\) GeV, tracks with \(\Delta R < 0.07\)} & \multicolumn{1}{C{8em}}{2 jets with \(p_T^{j} > 40\) GeV, \(m_{jj} > 400\) GeV, \(\eta_{jj} > 3\)} & \multicolumn{1}{C{8em}}{2 jets with \(p_T^{j} > 30, 20\) GeV, \(m_{jj} > 300\) GeV, \(\eta_{jj} > 3\)} & \multicolumn{1}{C{8em}|}{1 selected and isolated \(e/\mu\) or 2 selected \(e/\mu\) compatible with \(m_Z\)}\\
-			\hline
-		\end{tabular}
-		\caption{\ktodo{Taken from paper} Summary of event selection before MVA.}
-	\end{table}
+		\kmtab{table1}{height=0.75\textheight}
+		\caption{Summary of the event selections, including both common and category-specific selections.}
+	\end{figure}
 \end{frame}
 
 % MC/data background
@@ -538,129 +778,234 @@
 	content...
 \end{frame}
 
+%%%%%% 5. Section: MVA Selection %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Multivariate Analysis Selection \par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
+
 % MVA (overview)
-\begin{frame}{Event Selection (MVA)}
+\begin{frame}{Multivariate Analysis Selection}
 	\begin{itemize}
-		\item \khl{Multivariate Analysis (MVA)}
-		\vspace{1em}
-		\begin{itemize}
-			\item BDT classifiers based on ROOT TMVA \cite{hoecker2009tmva} for \textbf{ggH}, \textbf{low-\(\mathbf{p^\gamma_T}\) VBF}, and \textbf{high-\(\mathbf{p^\gamma_T}\) VBF}.
-			\item Training and validation samples defined by \textbf{meson mass SR \& sidebands}.
-			\item Signal \& Background events weighted by \(1/(\sigma_M/M)\), where
-			\begin{align*}
-				\frac{\sigma_M}{M} = \sqrt{\left(\frac{\sigma_m}{m}\right)^2_{\mathrm{meson}} + \left(\frac{\sigma _E}{E}\right)^2_{\mathrm{\gamma}}}
-			\end{align*}
-		\end{itemize}
+		\item \khl{Multivariate Analysis (MVA) Overview}\\
+		\kaltblock{Motivation}{
+			Improvement of signal-to-background ratio in categories with backgrounds dominated by \(\PGg+\text{jet}\) and multijet events. \textrightarrow\hspace{0.35em}\textbf{ggH}, \textbf{low-\(\mathbf{\ptg}\) VBF}, and \textbf{high-\(\mathbf{\ptg}\) VBF} categories.
+		}
+		\kblock{Methodology}{
+			\begin{itemize}
+				\item BDT classifiers based on ROOT TMVA \cite{hoecker2009tmva}, optimized with the Gradient boosting method.
+				\item Training and validation samples defined by \textbf{meson mass SR \& sidebands}.
+				\item Signal \& Background events weighted by \(1/(\sigma_M/M)\), where
+				\begin{align*}
+					\frac{\sigma_M}{M} = \sqrt{\left(\frac{\sigma_m}{m}\right)^2_{\mathrm{meson}} + \left(\frac{\sigma _E}{E}\right)^2_{\mathrm{\PGg}}}
+				\end{align*}
+				\ktodo{match formula in paper}
+				\item BDT classification is further split into \textbf{two sub-categories} (``cat0" and ``cat1") based on optimized discriminator threshold values to improve upper limit results.
+				\item \ktodo{write more stuff (e.g. cross-validation)}
+			\end{itemize}
+		}		
 	\end{itemize}
 \end{frame}
 
-% MVA (overview-variables)
-\begin{frame}{Event Selection (MVA)}
+% MVA (variables)
+\begin{frame}{Multivariate Analysis Selection}
 	\begin{itemize}
-		\item \khl{Multivariate Analysis (MVA)}
+		\item \khl{MVA Overview}\\
+		\vspace{0.5em}
+		Input variables:
+		\begin{table}
+			\centering
+			\begin{tabular}{l | c | c | c }
+				& \multicolumn{1}{C{8em}|}{\textbf{ggH}} & \multicolumn{1}{C{8em}|}{\textbf{High-\(\mathbf{\ptg}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{\ptg}\) VBF}} \\
+				\hline
+				& & \(p^{M\PGg}_T\) & \(p^{M\PGg}_T\) \\
+				Kinematics & \(p^{\PGg}_T\) & \(p^{\PGg}_T\) & \(p^{\PGg}_T\) \\
+				& \(p^{M}_T\) & \(p^{M}_T/m_{M\PGg}\) & \(p^{M}_T/m_{M\PGg}\) \\
+				& \(\eta_M\) & & \\
+				\hline
+				Meson Isolation & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) & \(I^{\mathrm{trk}}(\mathrm{trk_1})\) \\
+				\hline
+				& & \(M_{\jj}\) & \(M_{\jj}\) \\
+				Jet-related & & \(\Delta\phi_{\jj}\) & \(\Delta\phi_{\jj}\) \\
+				& & \(z^*\) & \(z^*\) \\
+			\end{tabular}
+			\caption{Input variables used for ggH and VBF categories.}
+		\end{table}
+		{\hspace*{0pt}\hfill\footnotesize \(z^*\) is the Zeppenfeld variable, defined as \(z^*=|\eta_{\PM\PGg} - 0.5(\eta_\jone + \eta_\jtwo)/|\Delta\eta_\jj|\).}
+	\end{itemize}
+\end{frame}
+
+% MVA (ggH)
+\begin{frame}{Multivariate Analysis Selection}
+	\begin{itemize}
+		\item \khl{MVA: ggH category}
 		\vspace{1em}
 		\begin{itemize}
-			\item Input variables used for ggH and VBF categories.
-			\begin{table}
-				\centering
-				\begin{tabular}{l | c | c | c }
-					& \multicolumn{1}{C{8em}|}{\textbf{ggH}} & \multicolumn{1}{C{8em}|}{\textbf{High-\(\mathbf{p^\gamma_T}\) VBF}} & \multicolumn{1}{C{8em}}{\textbf{Low-\(\mathbf{p^\gamma_T}\) VBF}} \\
-					\hline
-					& & \(p^{M\gamma}_T\) & \(p^{M\gamma}_T\) \\
-					Kinematics & \(p^{\gamma}_T\) & \(p^{\gamma}_T\) & \(p^{\gamma}_T\) \\
-					& \(p^{M}_T\) & \(p^{M}_T/m_{M\gamma}\) & \(p^{M}_T/m_{M\gamma}\) \\
-					 & \(\eta_M\) & & \\
-					\hline
-					Meson Isolation & \(I^{\mathrm{trk}}(M)\) & \(I^{\mathrm{trk}}(M)\) & \(I^{\mathrm{trk}}(M)\) \\
-					\hline
-					& & \(M_{JJ}\) & \(M_{JJ}\) \\
-					Jet-related & & \(\Delta\phi_{JJ}\) & \(\Delta\phi_{JJ}\) \\
-					& & \ktodo{zepVar} & \ktodo{zepVar} \\
-				\end{tabular}
-			\end{table}
+			\item Training samples\\
+			\vspace{0.5em}
+			\hspace{2em}\textbf{Signal}: MC-generated\\
+			\hspace{2em}\textbf{Background}: Data from meson mass sidebands.
+			\vspace{1em}\\
+			\item 4 input variables\\
+			\vspace{0.5em}
+			\begin{tabular}{|l | l|}
+				\hline
+				\(\ptg\) & photon \(\pt\)\\
+				\(\ptm\) & meson \(\pt\)\\
+				\(\eta_{\PM}\) & meson \(\eta\)\\
+				\(I^{\mathrm{trk}}(\mathrm{trk_1})\) & leading-track charged isolation\\
+				\hline
+			\end{tabular}
+			\vspace{1em}
+			\item BDT sub-categories\\
+			\hspace{2em}cat0: BDT-score \(>0.55\), optimized for max value of \(S/\sqrt{B}\).\\
+			\hspace{2em}cat1: \(-0.4<\) BDT-score \(<0.55\)
 		\end{itemize}
 	\end{itemize}
 \end{frame}
 
 % MVA (ggH)
-\begin{frame}{Event Selection (MVA)}
+\begin{frame}{Multivariate Analysis Selection}
 	\begin{itemize}
-		\item \khl{Multivariate Analysis (MVA): ggH category}
+		\item \khl{MVA: ggH category}\\
 		\vspace{1em}
 		\begin{itemize}
-			\item Input variables
-			\item SR \& CR
-			\item Results.
-			\item MVAdisc
-			\item cat0 \& cat1
+			\item Training results:
+		\end{itemize}
+	\ktodo{possible to add cat0 and cat1 lines?}\\
+		\begin{figure}
+			\centering
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgrho\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Rho.pdf}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgphi\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Phi.pdf}
+			\end{subfigure}%
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgkstar\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_K0s.pdf}
+			\end{subfigure}
+			\caption{BDT-score shown for the three decay channels of ggH.}
+		\end{figure}
+	\end{itemize}
+\end{frame}
+
+% MVA (VBF high&low)
+\begin{frame}{Multivariate Analysis Selection}
+	\begin{itemize}
+		\item \khl{MVA: High \& Low-\(\ptg\) VBF categories}
+		\vspace{1em}
+		\begin{itemize}
+			\item Training samples\\
+			\vspace{0.5em}
+			\hspace{2em}\textbf{Signal}: MC-generated\\
+			\hspace{2em}\textbf{Background}: \(\PGg\)+jets simulation and \(\PGg\) di-track events where the two tracks have the same charge.
+			\vspace{1em}\\
+			\item 7 input variables\\
+			Variable that is correlated with Higgs candidate mass is divided by the mass.\\
+			\ktodo{does not match with paper!}
+			\vspace{0.5em}
+			\begin{tabular}{|l | l|}
+				\hline
+				\(p^{\PM\PGg}_T\) & Higgs candidate \(\pt\)\\
+				\(\ptg\) & photon \(\pt\)\\
+				\(\ptm/m_{\PM\PGg}\) & meson \(\pt\) divided by Higgs candidate mass\\
+				\(I^{\mathrm{trk}}(\mathrm{trk_1})\) & leading-track charged isolation\\
+				\(M_{\jj}\) & di-jet invariant mass\\
+				\(\Delta\phi_{\jj}\) & \(\Delta\phi\) of the two jets\\
+				\(z*\) & Zeppenfeld variable\\
+				\hline
+			\end{tabular}
+			\vspace{1em}
+			\item BDT sub-categories\\
+			\hspace{2em}cat0: BDT-score \(>0.7\), optimized for max value of \(S/\sqrt{B}\).\\
+			\hspace{2em}cat1: \(-0.6<\) BDT-score \(<0.7\)
 		\end{itemize}
 	\end{itemize}
 \end{frame}
 
 % MVA (VBF high)
-\begin{frame}{Event Selection (MVA)}
+\begin{frame}{Multivariate Analysis Selection}
 	\begin{itemize}
-		\item \khl{Multivariate Analysis (MVA): High-\(p^\gamma_T\) VBF category}
+		\item \khl{MVA: High-\(\ptg\) category}\\
 		\vspace{1em}
 		\begin{itemize}
-			\item Input variables
-			\item SR \& CR
-			\item Results.
-			\item MVAdisc
+			\item Training results:
 		\end{itemize}
+		\ktodo{I NEED THE PLOT \textbf{FILES} (preferably pdf)}\\
+		\begin{figure}
+			\centering
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgrho\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Rho.pdf}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgphi\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Phi.pdf}
+			\end{subfigure}%
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgkstar\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_K0s.pdf}
+			\end{subfigure}
+			\caption{BDT-score shown for the three decay channels of High-\(\ptg\).}
+		\end{figure}
 	\end{itemize}
 \end{frame}
 
 % MVA (VBF low)
-\begin{frame}{Event Selection (MVA)}
+\begin{frame}{Multivariate Analysis Selection}
 	\begin{itemize}
-		\item \khl{Multivariate Analysis (MVA): Low-\(p^\gamma_T\) VBF category}
+		\item \khl{MVA: Low-\(\ptg\) category}\\
 		\vspace{1em}
 		\begin{itemize}
-			\item Input variables
-			\item SR \& CR
-			\item Results.
-			\item MVAdisc
+			\item Training results:
 		\end{itemize}
+		\ktodo{I NEED THE PLOT \textbf{FILES} (preferably pdf)}\\
+		\begin{figure}
+			\centering
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgrho\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Rho.pdf}
+			\end{subfigure}%
+			\hfill
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgphi\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_Phi.pdf}
+			\end{subfigure}%
+			\begin{subfigure}[t]{0.31\textwidth}
+				\caption*{\footnotesize\(\Hgkstar\)}
+				\includegraphics[width=\textwidth]{figures/misc/BDT_GF_K0s.pdf}
+			\end{subfigure}
+			\caption{BDT-score shown for the three decay channels of Low-\(\ptg\).}
+		\end{figure}
 	\end{itemize}
 \end{frame}
 
-% 
+%%%%%% 6. Section: Signal Modeling %%%%%%
 \begin{frame}
-	content...
-\end{frame}
-
-% 
-\begin{frame}
-	content...
-\end{frame}
-
-% Systematic uncertainties
-\begin{frame}{Systematic Uncertainties}
-	\ktodo{Note: only for signal}
-	\begin{enumerate}
-		\item \textbf{Integrated Luminosity}
-		\item \textbf{Total inelastic cross section} correcting PU profile in simulation to data.
-		\item \textbf{Trigger efficiencies}.
-		\item \textbf{Photon ID efficiencies}. Derived from \(Z\rightarrow e^+e^-\).
-		\item \textbf{Tracking efficiency}.
-		\item \textbf{Muon/Electron ID}.
-		\item \textbf{Meson Charged/Neutral Isolation Efficiencies}.
-		\item \textbf{JEC \& JES}\\
-		\vspace{1em}
-		Theoretical:\\
-		\item \textbf{QCD renormalization and factorization}.
-		\item \textbf{PDF \& \(\mathbf{\alpha_S}\)}.
-		\item \textbf{Parton shower modeling} from renormalization of QCD-induced ISR and FSR in \texttt{PYTHIA}.
-	\end{enumerate}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Signal Modeling \& Systematic Uncertainties \par%
+	\end{beamercolorbox}
+	\vfill
 \end{frame}
 
 % Signal modeling
 \begin{frame}{Signal modeling}
 	\begin{itemize}
-		\item \khl{\(\mathbf{m_{M\gamma}}\)}. Distribution of the \khl{reconstructed Higgs boson mass}.
+		\item Signal events extracted from the distribution of the \khl{reconstructed Higgs boson mass}.
 		\item Analytic function: \textbf{two-tailed Crystal Ball(TTCB)}.
 		\begin{align*}
+			\footnotesize
 			\label{eq:ttcb}
 			\mathrm{TTCB}(t) = \left\{
 			\begin{array}{l l}
@@ -670,18 +1015,58 @@
 			\end{array} \right.
 		\end{align*}
 		\item Fitted via unbinned likelihood to simulated signal events.
+		\vspace{0.5em}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.52\textheight]{figures/misc/signal_ggH__RhoCat_GFcat_2018_withMVA.png}
+			\vspace{-1em}
+			\caption{Example fitting of the TTCB function to the \(\Hgrho\) selected signal samples in the ggH category.}
+		\end{figure}
 	\end{itemize}
+\end{frame}
+
+% Systematic uncertainties
+\begin{frame}{Systematic Uncertainties}
+	\begin{table}
+		\small
+		\begin{tabular}{l|l}
+			\hline
+			\textbf{Integrated Luminosity} & 2.5\% (2016), 2.3\% (2017), and 2.5\% (2018)\\
+			\hline
+			\textbf{Total inelastic cross section} & 4.6\%\\
+			\hline
+			\textbf{Trigger efficiencies} & VBF-dedicated trigger, 2.2-3.4\% (photon-leg)
+			and 5.3-5.6\% (di-jet)\\
+			\hline
+			\textbf{Photon ID efficiencies} & Up to 1.5\%, \(\pt\) and \(\eta\) dependent\\
+			\hline
+			\textbf{Tracking efficiency} & 4.6-4.8\% (2.3-2.6\% \ktodo{??} per track)\\
+			\hline
+			\textbf{Muon/Electron ID} & Less than 1.0\% (muons) / 1.5\% (electrons)\\
+			\hline
+			\textbf{Meson Charged/Neutral Isolation Efficiencies} & 1.7-2.8 \%, depending on search channel and isolation type\\
+			\hline
+			\textbf{JEC \& JES} & Up to 3.5\% in VBF, negligible in ggH\\
+			\hline
+			\textbf{QCD renormalization and factorization} & 0.4\% (VBF), 0.7\% (WH), 3.8\% (ZH), and 2.6\% (\(\mathrm{t\bar{t}H}\))\\
+			\hline
+			\textbf{PDF \& \(\mathbf{\alpha_S}\)} & 1.6-3.2\%, depending on Higgs production\\
+			\hline
+			\textbf{Parton shower modeling} & \ktodo{what is the number?}\\
+			\hline
+		\end{tabular}
+	\end{table}
 \end{frame}
 
 % Background modeling
 \begin{frame}{Background modeling}
 	\begin{itemize}
 		\item Analytic functions: \textbf{Chebychev} polynomials (main), \textbf{Bernstein} polynomials and \textbf{exponential} series (determination of shape uncertainties).
-		\item Fitting region defined as \(m_{M\gamma}\) sidebands.\\
+		\item Fitting region defined as \(m_{M\PGg}\) sidebands.\\
 		\begin{itemize}
-			\item ggH category: \(110 < m_{M\gamma} < 120\) GeV \& \(130 < m_{M\gamma} < 160\) GeV. 
-			\item VBF categories (high \& low \(p^\gamma_T\)): \(100 < m_{M\gamma} < 120\) GeV \& \(130 < m_{M\gamma} < 170\) GeV.
-			\item VH category: \(100 < m_{M\gamma} < 120\) GeV \& \(130 < m_{M\gamma} < 150\) GeV.
+			\item ggH category: \(110 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 160\) GeV. 
+			\item VBF categories (high \& low \(\ptg\)): \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 170\) GeV.
+			\item VH category: \(100 < m_{M\PGg} < 120\) GeV \& \(130 < m_{M\PGg} < 150\) GeV.
 		\end{itemize}
 		\item Degree of polynomial determined with \textbf{F-test}.
 		\item \textbf{Bias test}.
@@ -690,13 +1075,54 @@
 
 % Signal & Background fits
 \begin{frame}{Signal \& Background Post-fit Distributions}
-	content...
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-top-left}{width=\textwidth}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-top-right}{width=\textwidth}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-middle-left}{width=\textwidth}
+		\end{subfigure}
+	\end{figure}
+\end{frame}
+
+% Signal & Background fits
+\begin{frame}{Signal \& Background Post-fit Distributions}
+	\begin{figure}
+		\centering
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-middle-right}{width=\textwidth}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-bottom-left}{width=\textwidth}
+		\end{subfigure}%
+		\hfill
+		\begin{subfigure}{0.31\textwidth}
+			\kmfig{fig3-bottom-right}{width=\textwidth}
+		\end{subfigure}
+	\end{figure}
+\end{frame}
+
+%%%%%% 9. Section: Results %%%%%%
+\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+		\usebeamerfont{title}\Huge Results \par%
+	\end{beamercolorbox}
+	\vfill
 \end{frame}
 
 % Unblinded limits (methodology)
 \begin{frame}{Results}
 	\begin{itemize}
-		\item \khl{Upper limits} on $\mathcal{B}(H\rightarrow\rho^0\gamma)$, $\mathcal{B}(H\rightarrow\phi\gamma)$, and $\mathcal{B}(H\rightarrow K^*_0\gamma)$ set at 95\% CL.
+		\item \khl{Upper limits} on $\mathcal{B}(H\rightarrow\rho^0\PGg)$, $\mathcal{B}(H\rightarrow\phi\PGg)$, and $\mathcal{B}(H\rightarrow K^*_0\PGg)$ set at 95\% CL.
 		\item CLs profile-likelihood ratio used as test-statistics, with the asymptotic approximation.
 		\item Systematic uncertainties treated as nuisance parameters. 
 	\end{itemize}
@@ -718,51 +1144,40 @@
 			\includegraphics[width=\textwidth]{figures/23-005-v07-marked-figs/fig4-bottom.pdf}
 		\end{subfigure}
 		\vspace{0.1em}
-		\caption{Expected and observed upper limits on $\mathcal{B}(H\rightarrow\rho^0\gamma)$ (top left), $\mathcal{B}(H\rightarrow\phi\gamma)$ (top right), and $\mathcal{B}(H\rightarrow K^*_0\gamma)$ (bottom) split by analysis categories and combined. Green and yellow bands correspond to 1 and 2$\sigma$ confidence intervals in the expected upper limits.}
+		\caption{Expected and observed upper limits on $\mathcal{B}(H\rightarrow\rho^0\PGg)$ (top left), $\mathcal{B}(H\rightarrow\phi\PGg)$ (top right), and $\mathcal{B}(H\rightarrow K^*_0\PGg)$ (bottom) split by analysis categories and combined. Green and yellow bands correspond to 1 and 2$\sigma$ confidence intervals in the expected upper limits.}
 	\end{figure}
 \end{frame}
 
 % Unblinded limits (table)
 \begin{frame}{Results}
-	\begin{table}
+	\begin{figure}
 		\centering
-		\begin{tabular}{lrrrrrr}
-			\hline
-			& \multicolumn{2}{c}{U.L. $\mathcal{B}(H\rightarrow \rho^0\gamma)$}  & \multicolumn{2}{c}{U.L. $\mathcal{B}(H\rightarrow \phi\gamma)$} &  \multicolumn{2}{c}{U.L. $\mathcal{B}(H\rightarrow K^*_0\gamma)$}\\ [2ex]
-			category & Exp.$(10^{-4})$ & Obs.$(10^{-4})$ & Exp.$(10^{-4})$ & Obs.$(10^{-4})$ & Exp.$(10^{-4})$ & Obs.$(10^{-4})$\\
-			\hline
-			VH & $62.3^{+25.6}_{-17.9}$ & 73.7 & $37.3^{+16.9}_{-11.3}$ & 45.0 & $25.3^{+11.4}_{-7.3}$ & 48.5 \\[2ex]
-			low-$p_T^\gamma$ VBF & $49.6^{+22.5}_{-15.0}$ & 35.6 & $33.1^{+18.7}_{-11.5}$ & 27.9 & $18.8^{+8.90}_{-5.7}$  & 12.3\\[2ex]
-			high-$p_T^\gamma$ VBF & $22.9^{+10.5}_{-6.9}$ & 16.0 & $16.0^{+9.0}_{-5.5}$ & 10.7 & $9.13^{+4.25}_{-2.75}$ & 6.66 \\[2ex]
-			ggH &$6.01^{+2.53}_{-1.72}$ & 4.37 & $3.08^{+1.33}_{-0.98}$ & 3.46 & $2.20^{+0.94}_{-0.62}$ & 1.93\\ [2ex]
-			\cellcolor{orange!50}\textbf{combined} & \cellcolor{orange!50}$5.71^{+2.37}_{-1.63}$ & \cellcolor{orange!50}\textbf{3.74} & \cellcolor{orange!50} $2.88^{+1.33}_{-0.83}$ & \cellcolor{orange!50} \textbf{2.97} & \cellcolor{orange!50}$2.10^{+0.90}_{-0.58}$ & \cellcolor{orange!50}\textbf{1.71} \\[2ex]
-			\hline
-		\end{tabular}
+		\kmtab{table2}{width=\textwidth}
 		\caption{Exclusion limits at 95\% CL on the branching fractions of the H boson decays. Observed and median expected limits with the upper and lower bounds in the expected 68\% CL intervals are reported.}
-	\end{table}
+	\end{figure}
 \end{frame}
 
-\begin{frame}{Results}
+\begin{frame}{Results Comparison}
 	\begin{table}[!ht]
 		\centering
 		\begin{tabular}[t]{|l|c|c|l|l|}
 			\hline
-			\multicolumn{1}{|c|}{\cellcolor{lightgray}\small Channel} & \cellcolor{lightgray}\small Coupling & \cellcolor{lightgray}\small SM \(\mathcal{BR}(\htomg)\) & \multicolumn{1}{c|}{\cellcolor{lightgray}\small Limits on \(\mathcal{BR}\)} & \multicolumn{1}{c|}{\cellcolor{lightgray}\small Notes} \\
+			\multicolumn{1}{|c|}{\cellcolor{lightgray}\small Channel} & \cellcolor{lightgray}\small Coupling & \cellcolor{lightgray}\small SM \(\mathcal{BR}(\htomg)\) & \multicolumn{1}{c|}{\cellcolor{lightgray}\small ATLAS Limits (\(10^{-4}\))} & \multicolumn{1}{c|}{\cellcolor{lightgray}\small \textbf{Our Limits (\(10^{-4}\))}} \\
 			\hline
 			
 			% phi
-			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.08) \times 10^{-5}\)\cite{K_nig_2015}} & Exp. \(4.2^{+1.8}_{-1.2}\times10^{-4}\) & ATLAS Run 2, \(35.6\;\textrm{fb}^{-1}\) \\ & & & Obs. \(5.0\times10^{-4}\) \cite{ATLAS_rhophigamma2023} & \(\phi\gamma\rightarrow K^+K^-\gamma\)\\
+			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(s\)} & \multirow{2}{*}{\((1.68\pm0.08) \times 10^{-5}\)\cite{K_nig_2015}} & \cellcolor{RoyalBlue!30}Exp. \(4.2^{+1.8}_{-1.2}\) & \cellcolor{GreenYellow!30}\textbf{Exp. \(2.88^{+1.33}_{-0.83}\)} \\ & & & \cellcolor{RoyalBlue!30}Obs. \(5.0\) \cite{ATLAS_rhophigamma2023} & \cellcolor{GreenYellow!30}\textbf{Obs. \(2.97\)}\\
 			\hline
 			
 			% rho
-			\multirow{2}{*}{\(\Hgphi\)} & \multirow{2}{*}{\(u, d\)} & \multirow{2}{*}{\((2.31\pm0.11) \times 10^{-6}\)\cite{K_nig_2015}} & Exp. \(10.0^{+4.9}_{-2.8}\times10^{-4}\) & ATLAS Run 2, \(35.6\;\textrm{fb}^{-1}\) \\ & & & Obs. \(10.4\times10^{-4}\) \cite{ATLAS_rhophigamma2023} & \(\rho\gamma\rightarrow \pi^+\pi^-\gamma\) \\
+			\multirow{2}{*}{\(\Hgrho\)} & \multirow{2}{*}{\(u, d\)} & \multirow{2}{*}{\((2.31\pm0.11) \times 10^{-6}\)\cite{K_nig_2015}} & \cellcolor{RoyalBlue!30}Exp. \(10.0^{+4.9}_{-2.8}\) & \cellcolor{GreenYellow!30}\textbf{Exp. \(5.71^{+2.37}_{-1.63}\)} \\ & & & \cellcolor{RoyalBlue!30}Obs. \(10.4\) \cite{ATLAS_rhophigamma2023} & \cellcolor{GreenYellow!30}\textbf{Obs. \( 3.74\)} \\
 			\hline
 			
 			% K0star
-			\multirow{2}{*}{\(\Hgkstar\)} & & \tiny (Only available for \(\PH\to \PQd\PAQs + \PAQd\PQs\)) & Exp. \(3.7^{+1.5}_{-1.0}\times10^{-4}\) & ATLAS Run 2, \(134\;\textrm{fb}^{-1}\) \\ & \multirow{-2}{*}{\(d\&s\) (flavor-changing)} & \(1.19\times10^{-11}\) \cite{Aranda_2020} & Obs. \(2.2\times10^{-4}\) \cite{ATLAS_omegaK0stargamma} & \(K^*_0\gamma\rightarrow K^\pm\pi^\mp\gamma\) \\
+			\multirow{2}{*}{\(\Hgkstar\)} & & \tiny (Only available for \(\PH\to \PQd\PAQs + \PAQd\PQs\)) & \cellcolor{RoyalBlue!30}Exp. \(3.7^{+1.5}_{-1.0}\) & \cellcolor{GreenYellow!30}\textbf{Exp. \(2.10^{+0.90}_{-0.58}\)} \\ & \multirow{-2}{*}{\(d\&s\) (flavor-changing)} & \(1.19\times10^{-11}\) \cite{Aranda_2020} & \cellcolor{RoyalBlue!30}Obs. \(2.2\) \cite{ATLAS_omegaK0stargamma} & \cellcolor{GreenYellow!30}\textbf{Obs. \(1.71\)} \\
 			\hline
 		\end{tabular}
-		\caption{\(\htomg\) channels considered in this analysis with their respective couplings and predicted branching ratios.}
+		\caption{Comparison of branching ratios obtained from theory, ATLAS, and this analysis.}
 		\label{tab:Higgs_rare_decays_results}
 	\end{table}
 \end{frame}

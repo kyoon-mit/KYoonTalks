@@ -1,0 +1,29 @@
+%!TEX program = lualatex
+\documentclass[border=0mm,11pt]{standalone}
+%\usepackage{color}
+%\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}
+\usepackage{tikz-feynman}
+\usetikzlibrary{shapes.geometric}
+\usepackage{amsmath}
+\tikzfeynmanset{compat=1.1.0}
+
+\usepackage{../sty/hepparticles}
+\usepackage{../sty/heppennames2}
+
+\begin{document}
+	\begin{tikzpicture}[]
+		\begin{feynman}
+			\vertex (cent) at (0,0);
+			\vertex [left=of cent, xshift=-0.1cm] (meson) {\(\PGf\)};
+			\vertex [right=of cent, xshift=1cm, yshift=0.6cm] (v1) {\(\PK^+\)};
+			\vertex [right=of cent, xshift=1cm, yshift=-0.6cm] (v2) {\(\PK^-\)};
+			\diagram* {
+				(meson) -- (cent),
+				(cent) -- [bend right=8] (v1),
+				(cent) -- [bend left=8] (v2),
+			};
+		\end{feynman}
+	\end{tikzpicture}
+\end{document}
