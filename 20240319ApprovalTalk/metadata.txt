@@ -1,0 +1,557 @@
+InfoBegin
+InfoKey: Creator
+InfoValue: LaTeX with Beamer class
+InfoBegin
+InfoKey: ModDate
+InfoValue: D:20240318153729-04&apos;00&apos;
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20240318153729-04&apos;00&apos;
+InfoBegin
+InfoKey: Producer
+InfoValue: MiKTeX pdfTeX-1.40.24
+InfoBegin
+InfoKey: PTEX.Fullbanner
+InfoValue: This is MiKTeX-pdfTeX 4.11.0 (1.40.24)
+InfoBegin
+InfoKey: Author
+InfoValue: R. Covarelli1,2, M. Pelliccioni, G. Umoret, M. D&apos;Alfonso, G. Gomez Ceballos, C. Paus, K. Yoon
+InfoBegin
+InfoKey: Title
+InfoValue:Approval Talk [HIG-23-005]
+InfoBegin
+InfoKey: Publisher
+InfoValue: CMS
+PdfID0: 936a40f3c089e725942bf958153a4f5c
+PdfID1: 936a40f3c089e725942bf958153a4f5c
+NumberOfPages: 53
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 3
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 4
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 5
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 6
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 7
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 8
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 9
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 10
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 11
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 12
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 13
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 14
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 15
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 16
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 17
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 18
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 19
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 20
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 21
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 22
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 23
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 24
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 25
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 26
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 27
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 28
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 29
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 30
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 31
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 32
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 33
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 34
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 35
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 36
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 37
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 38
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 39
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 40
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 41
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 42
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 43
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 44
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 45
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 46
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 47
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 48
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 49
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 50
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 51
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 52
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageMediaBegin
+PageMediaNumber: 53
+PageMediaRotation: 0
+PageMediaRect: 0 0 453.543 283.465
+PageMediaDimensions: 453.543 283.465
+PageLabelBegin
+PageLabelNewIndex: 1
+PageLabelStart: 1
+PageLabelPrefix: 1
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 2
+PageLabelStart: 1
+PageLabelPrefix: 2
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 3
+PageLabelStart: 1
+PageLabelPrefix: 3
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 4
+PageLabelStart: 1
+PageLabelPrefix: 4
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 5
+PageLabelStart: 1
+PageLabelPrefix: 5
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 6
+PageLabelStart: 1
+PageLabelPrefix: 6
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 7
+PageLabelStart: 1
+PageLabelPrefix: 7
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 8
+PageLabelStart: 1
+PageLabelPrefix: 8
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 9
+PageLabelStart: 1
+PageLabelPrefix: 9
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 10
+PageLabelStart: 1
+PageLabelPrefix: 10
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 11
+PageLabelStart: 1
+PageLabelPrefix: 11
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 12
+PageLabelStart: 1
+PageLabelPrefix: 12
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 13
+PageLabelStart: 1
+PageLabelPrefix: 13
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 14
+PageLabelStart: 1
+PageLabelPrefix: 14
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 15
+PageLabelStart: 1
+PageLabelPrefix: 15
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 16
+PageLabelStart: 1
+PageLabelPrefix: 16
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 17
+PageLabelStart: 1
+PageLabelPrefix: 17
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 18
+PageLabelStart: 1
+PageLabelPrefix: 18
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 19
+PageLabelStart: 1
+PageLabelPrefix: 19
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 20
+PageLabelStart: 1
+PageLabelPrefix: 20
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 21
+PageLabelStart: 1
+PageLabelPrefix: 21
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 22
+PageLabelStart: 1
+PageLabelPrefix: 22
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 23
+PageLabelStart: 1
+PageLabelPrefix: 23
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 24
+PageLabelStart: 1
+PageLabelPrefix: 24
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 25
+PageLabelStart: 1
+PageLabelPrefix: 25
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 26
+PageLabelStart: 1
+PageLabelPrefix: 26
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 27
+PageLabelStart: 1
+PageLabelPrefix: 27
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 28
+PageLabelStart: 1
+PageLabelPrefix: 28
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 29
+PageLabelStart: 1
+PageLabelPrefix: 29
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 30
+PageLabelStart: 1
+PageLabelPrefix: 30
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 31
+PageLabelStart: 1
+PageLabelPrefix: 31
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 32
+PageLabelStart: 1
+PageLabelPrefix: 32
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 33
+PageLabelStart: 1
+PageLabelPrefix: 33
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 34
+PageLabelStart: 1
+PageLabelPrefix: 34
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 35
+PageLabelStart: 1
+PageLabelPrefix: 35
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 36
+PageLabelStart: 1
+PageLabelPrefix: 36
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 37
+PageLabelStart: 1
+PageLabelPrefix: 37
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 38
+PageLabelStart: 1
+PageLabelPrefix: 38
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 39
+PageLabelStart: 1
+PageLabelPrefix: 39
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 40
+PageLabelStart: 1
+PageLabelPrefix: 40
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 41
+PageLabelStart: 1
+PageLabelPrefix: 41
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 42
+PageLabelStart: 1
+PageLabelPrefix: 42
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 43
+PageLabelStart: 1
+PageLabelPrefix: 43
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 44
+PageLabelStart: 1
+PageLabelPrefix: 44
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 45
+PageLabelStart: 1
+PageLabelPrefix: 45
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 46
+PageLabelStart: 1
+PageLabelPrefix: 46
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 47
+PageLabelStart: 1
+PageLabelPrefix: 47
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 48
+PageLabelStart: 1
+PageLabelPrefix: 48
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 49
+PageLabelStart: 1
+PageLabelPrefix: 49
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 50
+PageLabelStart: 1
+PageLabelPrefix: 50
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 51
+PageLabelStart: 1
+PageLabelPrefix: 51
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 52
+PageLabelStart: 1
+PageLabelPrefix: 52
+PageLabelNumStyle: NoNumber
+PageLabelBegin
+PageLabelNewIndex: 53
+PageLabelStart: 1
+PageLabelPrefix: 53
+PageLabelNumStyle: NoNumber

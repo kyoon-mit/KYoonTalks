@@ -677,7 +677,7 @@
 				\begin{align*}
 					\PGf\text{ mass window: }& 1.008<\mkk<1.032 \text{ GeV}\\
 					\text{Sidebands: }& 1.000<\mkk<1.008 \text{ GeV} \\
-					& 1.032<\mkk<1.050 \text{ GeV}
+					& 1.032<\mkk<1.042\text{ GeV}
 				\end{align*}
 			}
 		\end{subfigure}%
@@ -1372,30 +1372,44 @@
 	\end{figure}
 \end{frame}
 
+% Neutral iso
+\begin{frame}{Background Estimation ggG}
+	
+	{\footnotesize This slide was presented during the unblinding talk.}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.8\textheight]{figures/backup/BDT_ggH_bkg_SFs.pdf}
+	\end{figure}
+\end{frame}
+
 % Meson mass resolution
 \begin{frame}{Meson Mass Resolution}
 	\label{fr:mesmassres}
 	\begin{table}
-		\begin{tabular}{ l | c | c}
-			Meson & Resolution (MeV) & Width (MeV)\\
+		\small
+		\begin{tabular}{ l | c | c | c }
+			Meson & Resolution from \(\mathrm{m^{reco}_{ditrk} - m^{gen}_{ditrk}}\) fit (MeV) & Width from \(\mathrm{m^{reco}_{ditrk}}\) plot (MeV) & Width from PDG (MeV) \\
 			\hline
-			\(\PGrz\) & 90 & 147 \\
-			\(\PGf\) & 6.4 & 4.25 \\
-			\(\PKstarz\) & 42 & 41 \\
+			\(\PGrz\) & 8.89 & 90 & 147\\
+			\(\PGf\) & 2.22 & 6.4 & 4.25 \\
+			\(\PKstarz\) & 6.08 & 42 & 41 \\
 			\hline
 		\end{tabular}
 	\end{table}
 	\begin{figure}
-		\begin{subfigure}{0.3\textwidth}
-			fig1
+		\begin{subfigure}[t]{0.31\textwidth}
+			\includegraphics[width=\textwidth]{figures/backup/m_ditrk_Rho_signal.pdf}
+			\caption*{\(\Hgrho\)}
 		\end{subfigure}%
-		\begin{subfigure}{0.3\textwidth}
-			fig2
+		\begin{subfigure}[t]{0.31\textwidth}
+			\includegraphics[width=\textwidth]{figures/backup/m_ditrk_Phi_signal.pdf}
+			\caption*{\(\Hgphi\)}
 		\end{subfigure}%
-		\begin{subfigure}{0.3\textwidth}
-			fig3
+		\begin{subfigure}[t]{0.31\textwidth}
+			\includegraphics[width=\textwidth]{figures/backup/m_ditrk_K0s_signal.pdf}
+			\caption*{\(\Hgkstar\)}
 		\end{subfigure}%
-		\caption{\ktodo{placeholder for figures}}
+		\caption{\(\mathrm{m^{reco}_{ditrk} - m^{gen}_{ditrk}}\)  and Gaussian fit shown for the three decay channels.}
 	\end{figure}
 \end{frame}
 
